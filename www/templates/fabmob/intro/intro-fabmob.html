@@ -1,0 +1,13 @@
+<ion-view hide-nav-bar="true" class="intro-view">
+    <ion-slide-box delegate-handle="intro-box" on-slide-changed="slideChanged(index)" show-pager="false">
+      <ion-slide>
+        <ng-include src="'templates/fabmob/intro/summary-fabmob.html'"></ng-include>
+      </ion-slide>
+      <ion-slide>
+        <ng-include src="'templates/fabmob/intro/consent-fabmob.html'"></ng-include>
+      </ion-slide>
+      <ion-slide>
+        <ng-include src="'templates/fabmob/intro/login-fabmob.html'"></ng-include>
+      </ion-slide>
+    </ion-slide-box>
+</ion-view>

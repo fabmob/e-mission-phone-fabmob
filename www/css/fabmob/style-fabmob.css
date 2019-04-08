@@ -1,0 +1,308 @@
+:root {
+  --fabmob-color-blue-a: #5eb8e0;
+  --fabmob-color-blue-a-2: #5eb8e0;
+  --fabmob-color-blue-f: #9dcdd7;
+  --fabmob-color-green-b: #97b837;
+  --fabmob-color-yellow-o: #ffe000;
+  --fabmob-color-yellow-m: #d2ce00;
+}
+
+/* ========== ========== ========== ========== ========== */
+/* ionic.css & style.css */
+/* ========== ========== ========== ========== ========== */
+/* --fabmob-color-blue-a */
+.button.ng-binding.button-positive,
+.button.ng-binding.button-assertive,
+.button.button-light-green,
+.button.button-light-green.active,
+.button.button-gold.activated,
+.button.button-light-green.button-outline.active,
+.button.button-gold.button-outline.activated,
+.metric-change-data-button:active,
+.metric-get-button,
+.metric-get-button-inactive,
+.metric-range-button-active,
+.metric-filter-button-active,
+.metric-chart-button-active,
+.metric-summary-button-active,
+.distance-button-active,
+.speed-button-active,
+.trips-button-active,
+.duration-button-active,
+.full-toggle-left-active,
+.full-toggle-right-active,
+.unit-toggle-left-active,
+.unit-toggle-right-active,
+.carbon-goal-chart,
+.date_col.date_selected,
+.date_col:active,
+ion-modal-view > ion-header-bar > button,
+.toggle input:checked + .track,
+.toggle-on-ourcolor-bg,
+#map-fix-button,
+.button.button-positive.button-outline.active,
+.button.button-positive.button-outline.activated,
+.button.button-balanced {
+  background-color: var(--fabmob-color-blue-a) !important;
+}
+
+.selected_date_full.ng-binding,
+.icon.ion-chevron-left,
+.icon.ion-chevron-right,
+.button.button-light-green.button-clear,
+#green-leaf,
+.tab-item.tab-item-active,
+.tab-item.active,
+.tab-item.activated,
+.metric-datepicker,
+.metric-weekday-container-upper,
+.metric-weekday-container-lower,
+.metric-change-data-button,
+.metric-metric-button,
+.heatmap-mode-button,
+.metric-freq-button,
+.metric-basic,
+.metric-half,
+.heatmap-weekday-container-upper,
+.heatmap-weekday-container-lower,
+.heatmap-fixmap-button,
+.heatmap-get-button,
+.full-toggle-left,
+.full-toggle-right,
+.unit-toggle-left,
+.unit-toggle-right,
+.icon:not(.ion-ios-location),
+.ion-ios-arrow-right,
+#challenge.active,
+#party.active,
+.button.button-light-green.button-outline,
+.date-picker-button,
+.bar-stable .button,
+.button.button-positive.button-outline {
+  color: var(--fabmob-color-blue-a) !important;
+}
+
+.common-detail-item {
+  border-left-color: var(--fabmob-color-blue-a) !important;
+}
+
+.button.button-light-green.button-outline,
+.toggle input:checked + .track,
+.toggle-on-ourcolor-bg,
+.button.button-positive.button-outline {
+  border-color: var(--fabmob-color-blue-a) !important;
+}
+
+.list-col-left,
+.list-col-right {
+  border-bottom-width: 1.5px !important;
+  border-bottom-color: var(--fabmob-color-blue-a) !important;
+}
+
+.list-col-left {
+  border-right-width: 1.5px !important;
+  border-right-color: var(--fabmob-color-blue-a) !important;
+}
+
+/* --fabmob-color-blue-a-2 */
+#dashboard-calorie.card,
+#dashboard-bottom.card,
+#arrow-color,
+.user-carbon,
+.user-calorie,
+.percentage-change,
+.calorie-change,
+.metric-summary-title,
+.metric-summary-content,
+.metric-summary-option-button {
+  color: var(--fabmob-color-blue-a-2) !important;
+}
+
+h4.dashboard-headers {
+  background: var(--fabmob-color-blue-a-2) !important;
+}
+
+.dashboard-list {
+  background-color: var(--fabmob-color-blue-a-2) !important;
+}
+
+/* --fabmob-color-blue-f */
+.button.button-balanced.active,
+.button.button-balanced.activated {
+  background-color: var(--fabmob-color-blue-f) !important;
+}
+
+/* --fabmob-color-green-b */
+.ion-view-background,
+[ng-class="ion-view-background"],
+ion-modal-view {
+  background-color: var(--fabmob-color-green-b) !important;
+}
+
+/* --fabmob-color-green-o */
+.fabmob-diary-list-left-timeline {
+  border-left-width: 1.5px !important;
+  border-left-color: var(--fabmob-color-yellow-o) !important;
+}
+
+/* white */
+.toggle input + .track {
+  border-color: var(--fabmob-color-blue-a) !important;
+  background-color: white !important;
+}
+
+ion-modal-view > ion-header-bar > button,
+#map-fix-button,
+.button.button-positive.button-outline.active,
+.button.button-positive.button-outline.activated {
+  color: white !important;
+}
+
+/* black */
+.bar.bar-stable .title,
+.userdata-title,
+.nav-bar-title {
+  color: black !important;
+}
+
+/* transparent */
+.button.button-balanced.active,
+.button.button-balanced.activated {
+  border-color: transparent !important;
+}
+
+/* opacity */
+.nav-bar-title {
+  opacity: 1 !important;
+}
+
+/* border */
+ion-modal-view > ion-header-bar > button,
+#map-fix-button {
+  border: none !important
+}
+
+/* size */
+#modes.slider {
+  height: 245px !important;
+}
+
+#dashboard-bottom.card {
+  height: 240px !important;
+}
+
+/* ========== ========== ========== ========== ========== */
+/* main.diary.css */
+/* ========== ========== ========== ========== ========== */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .angular-leaflet-map {
+    width: 269px !important;
+  }
+}
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .angular-leaflet-map {
+    width: 319px !important;
+  }
+}
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
+  .angular-leaflet-map {
+    width: 354px !important;
+  }
+}
+
+/* ========== ========== ========== ========== ========== */
+/* diary-list-fabmob.html */
+/* ========== ========== ========== ========== ========== */
+.diary-list-fabmob-mode,
+.diary-list-fabmob-mode-value {
+  margin-left: 0.7em !important;
+  margin-right: 0.7em !important;
+  margin-top: 0.2em !important;
+}
+.diary-list-fabmob-mode {
+  font-size: 0.9em !important;
+}
+.diary-list-fabmob-mode-value {
+  font-size: 0.6em !important;
+}
+
+/* ========== ========== ========== ========== ========== */
+/* diary-detail-fabmob.html */
+/* ========== ========== ========== ========== ========== */
+.diary-detail-fabmob-title {
+  font-size: 1.1em !important;
+  margin-bottom: 0 !important;
+}
+
+.diary-detail-fabmob-mode,
+.diary-detail-fabmob-mode-value {
+  margin-left: 0.7em !important;
+  margin-right: 0.7em !important;
+  margin-top: 0.2em !important;
+  color: black;
+}
+.diary-detail-fabmob-mode {
+  font-size: 15px !important;
+}
+.diary-detail-fabmob-mode-value {
+  font-size: 10px !important;
+}
+.diary-detail-fabmob-title,
+#sectionList i,
+.diary-detail-fabmob-fixmap {
+  color: var(--fabmob-color-blue-a) !important;
+}
+.diary-detail-fabmob-fixmap {
+  padding-left: 0 !important;
+  margin-left: 16px !important;
+}
+.diary-detail-fabmob-refresh {
+  padding-right: 0 !important;
+  margin-right: 16px !important;
+}
+
+.control-list-item {
+  height: 55px !important;
+}
+/* ========== ========== ========== ========== ========== */
+/* popup datepicker */
+/* ========== ========== ========== ========== ========== */
+.ionic_datepicker_popup .popup-body .selected_date_full,
+.ionic_datepicker_popup .popup-buttons button,
+.ionic_datepicker_popup .selected_date {
+  background-color: var(--fabmob-color-blue-a) !important;
+}
+.ionic_datepicker_popup .popup-body .selected_date_full {
+  color: white !important;
+}
+.ionic_datepicker_popup .popup-body .month_select,
+.ionic_datepicker_popup .popup-body .year_select {
+  border-bottom: var(--fabmob-color-blue-a) !important;
+}
+.ionic_datepicker_popup .popup-body .button-clear,
+.ionic_datepicker_popup .popup-body .month_select:after,
+.ionic_datepicker_popup .popup-body .year_select:after {
+  color: var(--fabmob-color-blue-a) !important;
+}
+.ionic_datepicker_popup .today {
+  border-color: var(--fabmob-color-blue-a) !important;
+}
+
+/* ========== ========== ========== ========== ========== */
+/* main-control.html */
+/* ========== ========== ========== ========== ========== */
+.control-icon-button {
+  background-color: var(--fabmob-color-yellow-o) !important;
+}
+.control-icon-button > i {
+  color: var(--fabmob-color-blue-a) !important;
+}
