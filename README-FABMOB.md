@@ -1,6 +1,12 @@
 e-mission phone app [FABMOB]
 --------------------
 
+This is the README for e-mission-phone FabMob
+
+The full original README for e-mission-phone is here : https://github.com/e-mission/e-mission-phone/blob/master/README.md
+
+See also the e-mission doc repo here : https://github.com/e-mission/e-mission-docs/
+
 Updating the e-mission-\* plugins or adding new plugins
 ---
 
