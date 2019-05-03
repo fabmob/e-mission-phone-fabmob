@@ -9,8 +9,47 @@ The full original README for e-mission-phone is here : https://github.com/e-miss
 
 See also the e-mission doc repo here : https://github.com/e-mission/e-mission-docs/
 
+Get the "Traceur de Mobilités" project for FabMob
+---
+
+Clone repository
+
+```
+$ git clone https://github.com/fabmob/e-mission-phone-fabmob.git
+```
+
+Add Upstream repository to syncing forked repository
+```
+$ cd e-mission-phone-fabmob
+
+$ git remote -v
+	origin	https://github.com/fabmob/e-mission-phone-fabmob.git (fetch)
+	origin	https://github.com/fabmob/e-mission-phone-fabmob.git (push)
+
+$ git remote add upstream https://github.com/e-mission/e-mission-phone.git
+
+$ git remote -v
+	origin	https://github.com/fabmob/e-mission-phone-fabmob.git (fetch)
+	origin	https://github.com/fabmob/e-mission-phone-fabmob.git (push)
+	upstream	https://github.com/e-mission/e-mission-phone.git (fetch)
+	upstream	https://github.com/e-mission/e-mission-phone.git (push)
+
+$ git fetch upstream
+```
+
 Updating the e-mission-\* plugins or adding new plugins
 ---
+
+Get e-mission-phone update
+
+```
+$ git pull upstream master
+```
+
+Update and setup FabMob
+```
+$ ./bin/fabmob_update.sh
+```
 
 Setup the config
 
@@ -50,7 +89,7 @@ Installation is now complete. You can view the current state of the application 
     OR
 
     $ cordova emulate android
-    
+
 Updating the e-mission-phone and the plugins
 ---
 
