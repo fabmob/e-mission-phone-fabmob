@@ -64,7 +64,8 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="18" />
         <preference name="android-targetSdkVersion" value="26" />
-        <resource-file src="google-services.json" target="google-services.json" />
+        <hook src="bin/add_google_services.js" type="before_emulate" />
+        <hook src="bin/add_google_services.js" type="before_build" />
         <icon density="ldpi" src="resources/fabmob/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/fabmob/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/fabmob/android/icon/drawable-hdpi-icon.png" />
