@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://nominatim.openstreetmap.org https://e-mission.eecs.berkeley.edu https://api.ionic.io/push/tokens emission: 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: http://*.tile.openstreetmap.org http://tile.stamen.com https://*.tile.stamen.com http://*.tile.stamen.com 'unsafe-inline'"> -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://nominatim.openstreetmap.org http://145.239.101.212:8080 https://fabmob.grfmap.com https://api.ionic.io/push/tokens emission: 'unsafe-eval'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: http://*.tile.openstreetmap.org http://tile.stamen.com https://*.tile.stamen.com http://*.tile.stamen.com 'unsafe-inline'">
     <title></title>
 
@@ -24,7 +23,7 @@
     <link href="lib/angularjs-slider/dist/rzslider.css" rel="stylesheet">
 
     <!-- fabmob : START -->
-    <link href="css/fabmob/style-fabmob.css" rel="stylesheet">
+    <link href="css/fabmob.css" rel="stylesheet">
     <!-- fabmob : END -->
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -63,10 +62,7 @@
     <script type="text/javascript" src="cordova.js"></script>
 
     <!-- your app's js -->
-    <!-- fabmob : START -->
-    <!-- <script src="js/app.js"></script> -->
-    <script src="js/fabmob/app-fabmob.js"></script>
-    <!-- fabmob : END -->
+    <script src="js/app.js"></script>
     <script src="js/stats/clientstats.js"></script>
     <script src="js/splash/referral.js"></script>
     <script src="js/splash/customURL.js"></script>
@@ -76,25 +72,15 @@
     <script src="js/splash/localnotify.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-    <!-- fabmob : START -->
-    <!-- <script src="js/intro.js"></script> -->
-    <!-- <script src="js/main.js"></script> -->
-    <script src="js/fabmob/intro-fabmob.js"></script>
-    <script src="js/fabmob/main-fabmob.js"></script>
-    <!-- fabmob : END -->
+    <script src="js/intro.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/recent.js"></script>
     <script src="js/incident/post-trip-manual.js"></script>
     <script src="js/incident/post-trip-prompt.js"></script>
     <script src="js/incident/post-trip-map-display.js"></script>
-    <!-- fabmob : START -->
-    <!-- <script src="js/diary.js"></script> -->
-    <script src="js/fabmob/diary-fabmob.js"></script>
-    <!-- fabmob : END -->
+    <script src="js/diary.js"></script>
     <script src="js/diary/list.js"></script>
-    <!-- fabmob : START -->
-    <!-- <script src="js/diary/current.js"></script> -->
-    <script src="js/fabmob/diary/current-fabmob.js"></script>
-    <!-- fabmob : END -->
+    <script src="js/diary/current.js"></script>
     <script src="js/diary/detail.js"></script>
     <script src="js/diary/services.js"></script>
     <script src="js/common.js"></script>
@@ -105,12 +91,8 @@
     <script src="js/common/place-detail.js"></script>
     <script src="js/common/services.js"></script>
     <script src="js/survey/launch.js"></script>
-    <!-- fabmob : START -->
-    <!-- <script src="js/heatmap.js"></script> -->
-    <!-- <script src="js/metrics.js"></script> -->
-    <script src="js/fabmob/heatmap-fabmob.js"></script>
-    <script src="js/fabmob/metrics-fabmob.js"></script>
-    <!-- fabmob : END -->
+    <script src="js/heatmap.js"></script>
+    <script src="js/metrics.js"></script>
     <script src="js/goals.js"></script>
     <script src="js/control/general-settings.js"></script>
     <script src="js/control/collect-settings.js"></script>

@@ -65,6 +65,9 @@ angular.module('emission', ['ionic',
         });
     });
   });
+  $ionicPlatform.registerBackButtonAction(function (event) {
+    event.preventDefault();
+  }, 100);
   console.log("Ending run");
 })
 

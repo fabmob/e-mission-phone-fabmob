@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('emission.intro', ['emission.splash.startprefs',
-                                  'ionic-toast'])
+                                  'ionic-toast', 'emission.services'])
 
 .config(function($stateProvider) {
   $stateProvider
@@ -19,7 +19,7 @@ angular.module('emission.intro', ['emission.splash.startprefs',
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate,
-    $ionicPopup, $ionicHistory, ionicToast, $timeout, CommHelper, StartPrefs) {
+    $ionicPopup, $ionicHistory, ionicToast, $http, $timeout, CommHelper, StartPrefs) {
   $scope.getIntroBox = function() {
     return $ionicSlideBoxDelegate.$getByHandle('intro-box');
   };
@@ -45,7 +45,9 @@ angular.module('emission.intro', ['emission.splash.startprefs',
   };
 
   $scope.disagree = function() {
-    $state.go('root.main.heatmap');
+    if ($state.is('root.intro')) {
+      $scope.previous();
+    }
   };
 
   $scope.agree = function() {
@@ -54,7 +56,7 @@ angular.module('emission.intro', ['emission.splash.startprefs',
       if ($state.is('root.intro')) {
         $scope.next();
       } else {
-        StartPrefs.loadPreferredScreen();
+        // StartPrefs.loadPreferredScreen();
       }
     });
   };
@@ -85,13 +87,18 @@ angular.module('emission.intro', ['emission.splash.startprefs',
       // $scope.next();
       ionicToast.show(userEmail, 'middle', false, 2500);
       CommHelper.registerUser(function(successResult) {
+        $http.get("https://fabmob.grfmap.com/fabmob/user_emission/?user_email=" + userEmail).then(function(response) { // fabmob
+          console.log('user_email response', response)
+        }, function(error) {
+          console.log('user_email error', error)
+        });
         $scope.finish();
       }, function(errorResult) {
-        $scope.alertError('User registration error', errorResult);
+        // $scope.alertError('User registration error', errorResult);
         $scope.finish();
       });
     }, function(error) {
-        $scope.alertError('Sign in error', error);
+        // $scope.alertError('Sign in error', error);
         $scope.finish();
     });
   };

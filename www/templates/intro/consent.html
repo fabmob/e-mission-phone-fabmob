@@ -1,117 +1,53 @@
 <ion-content>
-<div class="consent-title">
-<center><h4>E-Mission: Data driven carbon emission reduction</h4></center>
-</div>
-<div class="consent-text">
-<h3>Introduction and Purpose</h3>
-This app is part of a travel behavior research platform developed at the
-University of California, Berkeley. The platform development is being led by <a
-href="http://www.cs.berkeley.edu/~shankari">K. Shankari</a> under the
-supervision of <a href="http://www.cs.berkeley.edu/~culler/">Prof. David
-Culler</a>. Our goal is to collect information from users about travel behavior
-across all modes, and use the aggregate information for better transportation
-infrastructure planning.
-
-<h3>What we collect</h3>
-We automatically track your location, accelerometer, device-generated activity
-recognition, and battery usage. We also allow you to optionally enter your
-experiences and feedback during travel through the app. Since our code is
-open source, you can inspect the data that we collect in the background at
-<a
-href="https://github.com/e-mission/e-mission-data-collection.git">https://github.com/e-mission/e-mission-data-collection.git</a>,
-explore the prompts for optional sentiment reporting at <a
-href="https://github.com/e-mission/e-mission-phone.git">https://github.com/e-mission/e-mission-phone.git</a>,
-and see the analysis that we perform at <a
-href="https://github.com/e-mission/e-mission-server.git">https://github.com/e-mission/e-mission-server.git</a>
-
-<h3>How we associate it with you</h3>
-You log in to the app using a valid gmail address. We map the gmail address to
-a unique UUID and associate all collected data with the UUID. In general, the
-mapping between the email address and the UUID will only be made available to
-the lead researcher for the platform (Shankari). If you are not comfortable
-sharing your real gmail adress, you can create a fake one to use for this
-platform. The only reason we use an email address is so that we can ensure that
-your data is only available to somebody logged in as you, and remains available
-even if you switch phones.
-
-<h3>Who gets to see it</h3>
-Individually identified, real-time data is only available to the lead
-researcher for the study (Shankari). The data may be shared for aggregate
-analysis under two scenarios as described below. It will not be used for
-marketing or advertising purposes.
-<ul>
-<li> Aggregate views of the collected data (both automatic and optional) that
-do not show individual trajectories (e.g. heatmaps) will be made publicly
-available through the platform website and on the phone app. You can explore
-this data on the "aggregate" tab of this app before consenting to data
-collection.
-<li> Time-delayed subsets of individual trajectory data, associated with their
-UUIDs but not email addresses, may by shared with collaborators, or released as
-research datasets to the community from time to time. If this is done, the time
-delay for sharing with collaborators will be at least one month, and the time
-delay for releasing to the community will be at least one year. Both
-collaborators and researchers will be asked to agree that they will publish
-only aggregate, non personally identifiable results, and will not re-share the
-data with others.
-</ul>
-
-<h3>Benefits and Compensation</h3>
-You will not be directly compensated for contributing your data to this
-platform.
-<p>
-However, we will use this information to provide you with a personalized travel
-profile that can be compared with the travel profiles of our other users, and
-with state and federal goals for daily exercise and GHG emission reduction. In
-addition, we will display aggregate travel patterns and aggregate crowdsourced
-safe/unsafe zones that you can use while making travel choices. You will have a
-chance to see the aggregate data generated before choosing to provide your own.
-
-<h3>Studies lead by other researchers</h3>
-If this platform is being used to collect data for a study conducted by another
-researcher, for example, from a Transportation Engineering Department, then you
-will be asked to assent to a separate document outlining the data association,
-retention and sharing policies for that study, <b>in addition to the policies
-above</b>. We will make all data, including the mapping between the email
-address and the UUID, directly available to the lead researcher for the main
-study. This will allow them to associate the automatically gathered information
-with demographic data, and any pre and post surveys that they conduct as part
-of their study. The other researcher may also choose to compensate you for your
-time, as described in the protocol document for that study.
-
-<h3>Your rights</h3>
-<b><i>Participation in research is completely voluntary</i></b>.  You have the
-right to decline to participate or to withdraw at any point in this study
-without penalty or loss of benefits to which you are otherwise entitled.
-
-<h3>Questions</h3>
-If you have any questions about this research, please feel free to contact us.
-For the quickest response, you can send email to the entire team at <a
-href="mailto:e-mission@lists.eecs.berkeley.edu">e-mission@lists.eecs.berkeley.edu</a>.
-If you want to contact only the lead researcher or the PI, you can use their
-profiles above.
-
-If you have any questions about your rights or treatment as a research
-participant using this platform, please contact the University of California at
-Berkeley's Committee for Protection of Human Subjects at 510-642-7461, or
-e-mail <a href="mailto:subjects@berkeley.edu">subjects@berkeley.edu</a>.
-
-If you agree to contribute your data to the platform, please click "I agree"
-below to proceed. If you do not wish to contribute your data to the platform,
-please click "I disagree" below to return to the aggregate views. This notice
-is also available <a
-href="https://e-mission.eecs.berkeley.edu/consent">online</a> in case you need
-to read it again in the future.
-
-<div class="row" style="margin-top: 20px;">
-  <div class="col" style="margin-right: 5px">
-    <button class="button button-block button-assertive button-outline" ng-click="disagree()" id="consent-button">I Refuse</button>
+  <div class="consent-title">
+    <center>
+      <h4>Traceur de Mobilité / Fabrique des Mobilités / VERSION TEST PHASE 2</h4>
+    </center>
   </div>
-  <div class="col" style="margin-left: 5px">
-    <button class="button button-block button-balanced button-outline" ng-click="agree()" id="consent-button">I Agree</button>
+  <div class="consent-text">
+    <h3>English intro</h3>
+    This application will be translated to French before Summer 2019, but this intro is in French, as most users are: the English version of the intro and consent terms are here : <a href="https://oultim.frama.site" target="_blank">https://oultim.frama.site</a>
+    <h3>Contexte et objectifs</h3>
+    Cette application est développée dans le cadre d’un projet soutenu par la Fabrique des Mobilités, décrit ici : <a href="https://oultim.frama.site" target="_blank">https://oultim.frama.site</a>
+    <div class="intro-space"></div>
+    Le développement réutilise les logiciels développés par Shankari K. à l’Université de Berkeley publiés sous licence libre sur <a href="https://github.com/emission" target="_blank">https://github.com/emission</a>
+    <div class="intro-space"></div>
+    A ce stade du projet, l’application est une VERSION DE TEST qui a pour objectif de faire évaluer les logiciels d’e-mission au printemps 2019 et la faisabilité de les adapter pour répondre aux cas d'usages qui intéressent les testeurs.
+    <br>
+    En particulier, l’application n’est pas encore traduite en français et réutilise tels quels les logiciels existants.
+    <br>
+    Le serveur mis en place par ICIA Technologies dans le cadre de la démo n’offre aucune garantie particulière de niveau de service ; l’application est diffusée aux testeurs mais n’est pas encore publique.
+    <div class="intro-space"></div>
+    En créant un compte sur l’application, l’utilisateur prend connaissance du contexte du projet décrit ici et doit en accepter les conditions d’utilisation pour s'en servir.
+    <div class="intro-space"></div>
+
+    <h3>Données recueillies</h3>
+    L’appli recueille position, accélération et l’activité détectée automatiquement par le smartphone (mode de transport), ainsi que l’usage de la batterie.
+
+    <h3>Lien entre données et</h3>
+    Pour se connecter, il faut fournir un nom d'utilisateur valide, qui sera attaché à un identifiant unique avec toutes les données recueillies.
+    L'utilisateur pourra aussi prochainement accéder à un outil de visualisation des données depuis un navigateur (grfmap).
+
+    <h3>Usage des données</h3>
+    - les utilisateurs peuvent télécharger leurs données individuelles et demander à ce qu'on supprime leur compte
+    - les utilisateurs peuvent consulter leurs données via l'application
+    - l'équipe projet (les administrateurs) a accès à l'ensemble des données (elles ne sont pas cryptées)
+    - les données sont utilisées uniquement pour le test, ne seront pas diffusées à des tiers, ni utilisées pour aucune étude
+    - les données seront supprimées à l'issue des tests
+    <div class="intro-space"></div>
+    L’équipe projet a accès à l’ensemble des données des utilisateurs et les utilise à des fins de test technique, aucune analyse particulière des données de mobilité n’est réalisée ; les données ne sont pas transmises à des tiers et seront détruites 90 jours après le début de la période de test.
+
+    <h3>Questions</h3>
+    Pour toutes questions merci d’avance de nous contacter : <a href="https://oultim.frama.site/contact" target="_blank">https://oultim.frama.site/contact</a>
+
+    <div class="row" style="margin-top: 20px;">
+      <div class="col" style="margin-right: 5px">
+        <button class="button button-block button-assertive button-outline" ng-click="disagree()" id="consent-button">Je refuse</button>
+      </div>
+      <div class="col" style="margin-left: 5px">
+        <button class="button button-block button-positive button-outline" ng-click="agree()" id="consent-button">J'accepte</button>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div class="consent-space"></div>
-
-
+  <div class="consent-space"></div>
 </ion-content>

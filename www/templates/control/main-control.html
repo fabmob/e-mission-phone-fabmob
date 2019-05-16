@@ -23,16 +23,6 @@
       </label>
     </div>
 
-
-    <div class="control-list-item">
-      <div class="control-list-text">Dark theme</div>
-      <label ng-click="toggleDarkTheme()" class="toggle control-list-toggle toggle-color">
-        <input type="checkbox" ng-checked="getDarkTheme()">
-        <div class="track">
-          <div class="handle"></div>
-        </div>
-      </label>
-    </div>
     <div class="control-list-item">
       <div class="control-list-text">Force sync</div>
       <div ng-click="forceSync()" class="control-icon-button" ><i class="ion-android-sync"></i></div>
@@ -40,10 +30,6 @@
     <div class="control-list-item">
       <div class="control-list-text">Share</div>
       <div ng-click="share()" class="control-icon-button" ><i class="ion-share"></i></div>
-    </div>
-    <div class="control-list-item">
-      <div class="control-list-text">Check for UI updates</div>
-      <div ng-click="checkUpdates()" class="control-icon-button"><i class="ion-android-download"></i></div>
     </div>
 
     <div class="control-list-item">
@@ -77,7 +63,6 @@
           </ion-item>
       </ion-list>
     </div>
-
 
     <div class="control-list-item">
       <div class="control-list-text">Developer zone</div>
@@ -134,7 +119,6 @@
         <div ng-click="editCollectionConfig($event)" id="gray" class="control-icon-button"><i class="ion-edit"></i></div>
       </div>
       <ion-list>
-
           <ion-item class="row" ng-repeat="entry in settings.collect.show_config">
                 <div class="col timestamp item-text-wrap control-info">{{entry.key}}</div>
                 <div class="col detail item-text-wrap control-info"> {{entry.val}}</div>
@@ -165,7 +149,7 @@
             <div class="row" ng-include="'templates/control/transition-notify-display-detail.html'"></div>
         </ion-item>
       </ion-list>
-
     </div>
+
   </ion-content>
 </ion-view>

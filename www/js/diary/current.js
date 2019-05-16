@@ -1,15 +1,15 @@
  angular.module('emission.main.diary.current', ['ui-leaflet',
-                                                'ngCordova', 
-                                                'emission.services', 
+                                                'ngCordova',
+                                                'emission.services',
                                                 'ionic',
                                                 'emission.incident.posttrip.manual',
                                                 'rzModule',
                                                 'emission.plugin.kvstore',
                                                 'emission.plugin.logger'])
 
-.controller('CurrMapCtrl', function($scope, Config, $state, $timeout, $ionicActionSheet,leafletData, 
+.controller('CurrMapCtrl', function($scope, Config, $state, $timeout, $ionicActionSheet,leafletData,
                                     Logger, $window, PostTripManualMarker, CommHelper, $http, KVStore, $ionicPlatform) {
-    
+
   console.log("controller CurrMapCtrl called from current.js");
   var _map;
   var _localIncidentMarkers = [];
@@ -20,13 +20,13 @@
   MANUAL_INCIDENT = "manual/incident";
   BACKGROUND_LOCATION = "background/location";
   INCIDENT_CONFIG = 'incident_config';
-  $scope.mapCtrl = {}; 
-  var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]; 
+  $scope.mapCtrl = {};
+  var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
   $scope.diary = function() {
     console.log('diary', "in diary");
     $state.go("root.main.diary");
-  };   
+  };
 
   angular.extend($scope.mapCtrl, {
     defaults: {
@@ -144,7 +144,7 @@
             Logger.log("last location is not defined, returning defaults");
             $scope.currSpeedInKmh = 0;
         }
-        angular.extend($scope.mapCtrl, { 
+        angular.extend($scope.mapCtrl, {
           defaults : {
             center: {
               lat: both[1],
@@ -175,7 +175,7 @@
               },
             ],
           },
-        });  
+        });
       });
     }).catch(function(error) {
         Logger.log("While loading location data, error "+JSON.stringify(error));
@@ -196,7 +196,7 @@
       marker.setStyle({color: 'green'});
     } else if (stress === 100) {
       marker.setStyle({color: 'red'});
-    } 
+    }
     map.addLayer(marker);
   };
 
@@ -213,7 +213,7 @@
             markerList.push(marker);
             addIncidentLayer(incident.stress, marker, map);
         }
-      });  
+      });
   };
 
   var removeExistingIncidentMarkers = function(map, markerList) {
@@ -239,7 +239,7 @@
 
   var getServerIncidents = function() {
       Logger.log("Getting server incidents with call "+JSON.stringify(incidentServerCalldata));
-      $http.post("https://e-mission.eecs.berkeley.edu/result/heatmap/incidents/timestamp", incidentServerCalldata).then(function(res){
+      $http.post("http://145.239.101.212:8080/result/heatmap/incidents/timestamp", incidentServerCalldata).then(function(res){
           Logger.log("Server incidents result is "+JSON.stringify(res));
           // Need to remove existing markers before adding new ones
           // https://github.com/e-mission/e-mission-phone/pull/263#issuecomment-322669042
@@ -317,7 +317,7 @@
     Logger.log("paused current screen, stopping incident refresh");
     clearTimeout(mapRunning);
     clearTimeout(gettingIncidents);
-  }); 
+  });
 
   $ionicPlatform.ready().then(function() {
       Logger.log("ionicPlatform.ready in current screen, getting local incidents");
