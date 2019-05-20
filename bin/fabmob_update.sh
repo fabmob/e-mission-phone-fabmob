@@ -38,32 +38,32 @@ if [ $length -ne 0 ]; then
             cordova plugin rm $pluginname
         fi
     done
-fi
 
-platforms=""
-if [[ "$OSTYPE" == "darwin"* ]]; then # macOS
-    stopasign=0
-    while read -r line; do
-        if [ "$line" == "Available platforms:" ]; then
-            stopasign=1
-        fi
-        if [ $stopasign == 0 ]; then
+    platforms=""
+    if [[ "$OSTYPE" == "darwin"* ]]; then # macOS
+        stopasign=0
+        while read -r line; do
+            if [ "$line" == "Available platforms:" ]; then
+                stopasign=1
+            fi
+            if [ $stopasign == 0 ]; then
+                platforms=$platforms$line
+            fi
+        done < <(cordova platforms)
+    else
+        while read -r line; do
+            if [ "$line" == "Available platforms:" ]; then
+                break
+            fi
             platforms=$platforms$line
-        fi
-    done < <(cordova platforms)
-else
-    while read -r line; do
-        if [ "$line" == "Available platforms:" ]; then
-            break
-        fi
-        platforms=$platforms$line
-    done <<< $(cordova platforms)
-fi
+        done <<< $(cordova platforms)
+    fi
 
-if [[ $platforms == *"android"* ]]; then
-    cordova platform rm android
-fi
+    if [[ $platforms == *"android"* ]]; then
+        cordova platform rm android
+    fi
 
-if [[ $platforms == *"ios"* ]]; then
-    cordova platform rm ios
+    if [[ $platforms == *"ios"* ]]; then
+        cordova platform rm ios
+    fi
 fi
