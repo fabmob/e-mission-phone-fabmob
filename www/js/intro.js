@@ -87,10 +87,10 @@ angular.module('emission.intro', ['emission.splash.startprefs',
       // $scope.next();
       ionicToast.show(userEmail, 'middle', false, 2500);
       CommHelper.registerUser(function(successResult) {
-        $http.get("https://fabmob.grfmap.com/fabmob/user_emission/?user_email=" + userEmail).then(function(response) { // fabmob
-          console.log('user_email response', response)
+        $http.get(CONSTANTS.grfmap_url + "/fabmob/user_emission/?user_email=" + userEmail).then(function(response) { // fabmob
+
         }, function(error) {
-          console.log('user_email error', error)
+
         });
         $scope.finish();
       }, function(errorResult) {

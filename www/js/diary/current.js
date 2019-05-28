@@ -238,7 +238,7 @@
 
   var getServerIncidents = function() {
       Logger.log("Getting server incidents with call "+JSON.stringify(incidentServerCalldata));
-      $http.post("http://145.239.101.212:8080/result/heatmap/incidents/timestamp", incidentServerCalldata).then(function(res){
+      $http.post(CONSTANTS.server_url + "/result/heatmap/incidents/timestamp", incidentServerCalldata).then(function(res){
           Logger.log("Server incidents result is "+JSON.stringify(res));
           // Need to remove existing markers before adding new ones
           // https://github.com/e-mission/e-mission-phone/pull/263#issuecomment-322669042

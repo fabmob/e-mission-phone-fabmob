@@ -411,7 +411,7 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       clonedData.metric_list = [DURATION, MEDIAN_SPEED, COUNT, DISTANCE];
       clonedData.is_return_aggregate = true;
       var getMetricsResult = $http.post(
-        "http://145.239.101.212:8080/result/metrics/timestamp",
+        CONSTANTS.server_url + "/result/metrics/timestamp",
         clonedData)
       return getMetricsResult;
    }
