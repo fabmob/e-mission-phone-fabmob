@@ -9,6 +9,10 @@ The full original README for e-mission-phone is here : https://github.com/e-miss
 
 See also the e-mission doc repo here : https://github.com/e-mission/e-mission-docs/
 
+For end-users:
+---
+Please look at the [App FAQ on the wiki](https://github.com/fabmob/e-mission-phone-fabmob/wiki).
+
 Get the "Traceur de Mobilités" project for FabMob
 ---
 
