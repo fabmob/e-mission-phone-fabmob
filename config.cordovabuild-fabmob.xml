@@ -28,6 +28,7 @@
     </feature>
     <platform name="ios">
         <preference name="UseSwiftLanguageVersion" value="5" />
+        <hook src="hooks/after_platform_add/ios/ios_set_openid_oauth_uri.js" type="after_platform_add" />
         <icon height="57" src="resources/fabmob/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/fabmob/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/fabmob/ios/icon/icon-40.png" width="40" />
@@ -66,6 +67,8 @@
         <preference name="android-targetSdkVersion" value="26" />
         <hook src="bin/add_google_services.js" type="before_emulate" />
         <hook src="bin/add_google_services.js" type="before_build" />
+        <hook src="hooks/before_build/android/android_set_openid_oauth_uri.js" type="before_build" />
+        <hook src="hooks/before_build/android/android_set_provider.js" type="before_build" />
         <icon density="ldpi" src="resources/fabmob/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/fabmob/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/fabmob/android/icon/drawable-hdpi-icon.png" />
