@@ -9,22 +9,15 @@ const LOG_NAME = "Changing OAuth URI: ";
 
 var changeUri = function (file, currentName, newName) {
     if (fs.existsSync(file)) {
-        fs.readFile(file, 'utf8', function (err, data) {
+        var data = fs.readFileSync(file, 'utf8');
 
-            if (err) {
-                throw new Error(LOG_NAME + 'Unable to find ' + file + ': ' + err);
-            }
-
-            var regEx = new RegExp(currentName, 'g');
-
-            var result = data.replace(regEx, newName + '.auth');
-            fs.writeFile(file, result, 'utf8', function (err) {
-                if (err) throw new Error(LOG_NAME + 'Unable to write into ' + file + ': ' + err);
-                console.log(LOG_NAME + " " + file + " updated...")
-            });
-        });
+        var regEx = new RegExp(currentName, 'g');
+        var result = data.replace(regEx, newName + '.auth');
+    
+        fs.writeFileSync(file, result, 'utf8');
+        console.log(LOG_NAME + " " + file + " updated...");
     } else {
-        console.log("Oups");
+        throw new Error(LOG_NAME + 'Unable to find ' + file + '.');        
     }
 }
 
@@ -42,6 +35,15 @@ module.exports = function (context) {
         var etree = et.parse(data);
         var applicationName = etree._root.attrib.id;
         console.log(LOG_NAME + "Your application is " + applicationName);
+
+        var secretFile = path.join(context.opts.projectRoot, "resources/fabmob/make/secret-cloak.key");
+        if (fs.existsSync(secretFile)) {
+            var data = fs.readFileSync(secretFile, 'utf8');
+            applicationName = applicationName + "." + data;
+            console.log(LOG_NAME + "I have now a secret cloak, stealth mode!");
+        } else {
+            console.log(LOG_NAME + "No secret file, pursuing without it.")
+        }
 
         var platformRoot = path.join(context.opts.projectRoot, 'platforms/ios/')
         console.log(LOG_NAME + "Updating FabMob-Info.plist...");

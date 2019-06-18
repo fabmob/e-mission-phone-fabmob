@@ -111,3 +111,5 @@ cordova plugin list (compare the versions to the ones in config.xml)
 cordova build android`
 
 and similar instructions for iOS if needed.
+
+> **WARNING**: A hook modifies (before the build) the OAuth URI, you will need to create a file `secret-cloak.key` containing a string with maximum 10 characters (you can use [random.org](https://www.random.org/strings/?num=10&len=10&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new) to generate it) in the folder `resources/fabmob/make/` to avoid multiple apps to listen to the same custom URL (as mentioned here https://github.com/e-mission/e-mission-docs/issues/402#issuecomment-501429914). If there is no `secret-cloak.key` file, the hook will use just your application name.

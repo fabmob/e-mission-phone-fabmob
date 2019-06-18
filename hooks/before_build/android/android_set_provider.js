@@ -10,65 +10,46 @@ const LOG_NAME = "Changing Providers: ";
 
 var changeProvider = function (file, currentName, newName) {
     if (fs.existsSync(file)) {
-        fs.readFile(file, 'utf8', function (err, data) {
-            if (err) {
-                throw new Error(LOG_NAME + 'Unable to find ' + file + ': ' + err);
-            }
+        var data = fs.readFileSync(file, 'utf8');
+        var regEx = new RegExp(currentName, 'g');
 
-            var regEx = new RegExp(currentName, 'g');
-
-            var result = data.replace(regEx, newName + '.provider');
+        var result = data.replace(regEx, newName + '.provider');
             
-            fs.writeFile(file, result, 'utf8', function (err) {
-                if (err) throw new Error(LOG_NAME + 'Unable to write into ' + file + ': ' + err);
-                console.log(LOG_NAME + "" + file + " updated...")
-            });
-        });
+        fs.writeFileSync(file, result, 'utf8');
+        console.log(LOG_NAME + " " + file + " updated...");
+    } else {
+        throw new Error(LOG_NAME + 'Unable to find ' + file + '.');        
     }
 }
 
 var changeAccountType = function (file, currentName, newName) {
     if (fs.existsSync(file)) {
+        var data = fs.readFileSync(file, 'utf8');
+        var regEx = new RegExp(currentName, 'g');
 
-        fs.readFile(file, 'utf8', function (err, data) {
-            if (err) {
-                throw new Error(LOG_NAME + 'Unable to find ' + file + ': ' + err);
-            }
-
-            var regEx = new RegExp(currentName, 'g');
-
-            var result = data.replace(regEx, newName);
-
-            fs.writeFile(file, result, 'utf8', function (err) {
-                if (err) throw new Error('Unable to write into ' + file + ': ' + err);
-                console.log(LOG_NAME + "" + file + " updated...")
-            });
-
-
-        });
+        var result = data.replace(regEx, newName);
+        fs.writeFileSync(file, result, 'utf8');
+        console.log(LOG_NAME + " " + file + " updated...");
+    } else {
+        throw new Error(LOG_NAME + 'Unable to find ' + file + '.');        
     }
 }
 
 
 var changeAccountTypeAndProvider = function (file, accountType, providerName, newName) {
     if (fs.existsSync(file)) {
+        var data = fs.readFileSync(file, 'utf8');
 
-        fs.readFile(file, 'utf8', function (err, data) {
-            if (err) {
-                throw new Error(LOG_NAME + 'Unable to find ' + file + ': ' + err);
-            }
+        var regEx1 = new RegExp(accountType, 'g');
+        var regEx2 = new RegExp(providerName, 'g');
 
-            var regEx1 = new RegExp(accountType, 'g');
-            var regEx2 = new RegExp(providerName, 'g');
+        var result = data.replace(regEx1, newName);
+        result = result.replace(regEx2, newName + '.provider');
 
-            var result = data.replace(regEx1, newName);
-            result = result.replace(regEx2, newName + '.provider');
-
-            fs.writeFile(file, result, 'utf8', function (err) {
-                if (err) throw new Error(LOG_NAME + 'Unable to write into ' + file + ': ' + err);
-                console.log(LOG_NAME + "" + file + " updated...")
-            });
-        });
+        fs.writeFileSync(file, result, 'utf8');
+        console.log(LOG_NAME + " " + file + " updated...");
+    } else {
+        throw new Error(LOG_NAME + 'Unable to find ' + file + '.');        
     }
 }
 
