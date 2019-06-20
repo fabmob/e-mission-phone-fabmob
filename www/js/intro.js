@@ -19,7 +19,7 @@ angular.module('emission.intro', ['emission.splash.startprefs',
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate,
-    $ionicPopup, $ionicHistory, ionicToast, $timeout, CommHelper, StartPrefs,$http, $translate, $cordovaFile) {
+    $ionicPopup, $ionicHistory, ionicToast, $timeout, CommHelper, StartPrefs, $translate, $cordovaFile) {
   
   $scope.getConsentFile = function () {
     var lang = $translate.use();
