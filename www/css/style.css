@@ -364,6 +364,8 @@ img.center {
   border-radius: 5px;
   display: block;
   margin: 10px;
+  /* @TODO Remove margin-top when CO^2 fixed */
+  margin-top: 55px;
   position: relative;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03), 0 2px 3px rgba(0, 0, 0, 0.05);
   /*background: rgba(40,218,183,1);
@@ -384,7 +386,8 @@ img.center {
 }
 
 .expanded-calorie-card{
-  height: 370px !important;
+  /* height: 370px !important; */
+  height: 300 !important;
 }
 
 /*#dashboard.card.inactive:after{
