@@ -3,7 +3,7 @@
     <!-- GeofenceActions -->
     <string name="unable_detect_current_location">Impossible de détecter la position, même en forçant: nouvel essai à la prochaine synchro</string>
     <!-- ActivityRecognitionChangeIntentService.java -->
-    <string name="recording_activity">Recueil de l'activité </string>
+    <string name="recording_activity">Recueil de l\'activité </string>
     <string name="detected_new_activity">Nouvelle activité détectée: %1$s</string>
     <string name="activity_transport">transport public</string>
     <string name="activity_cycling">vélo</string>
@@ -18,7 +18,7 @@
     <!-- TripDiaryStateMachineForegroundService -->
     <string name="trip_tracking_started">Tracking démarré en tâche de fond </string>
     <!-- TripDiaryStateMachineReceiver -->
-    <string name="new_data_collection_terms">Nouvelles conditions d'utilisation - recueil arrêté, consentez-vous aux nouvelles conditions?</string>
+    <string name="new_data_collection_terms">Nouvelles conditions d\'utilisation - recueil arrêté, consentez-vous aux nouvelles conditions?</string>
     <string name="battery_level">Interagissez! Niveau de batterie: %1$d</string>
     <!-- TripDiaryStateMachineService and Ongoing-->
     <string name="google_connection_suspended">API Google interrompue %1$s</string>
@@ -26,7 +26,7 @@
     <string name="success_moving_new_state">Ok pour passer à %1$s</string>
     <string name="error_creating_geofence">Erreur %1$d lors de la création de geofence</string>
     <string name="failed_moving_new_state">Echec pour passer à %1$s</string>
-    <string name="location_permission_off_enable">Recueil de position désactivé, cliquez pour l'autoriser</string>
+    <string name="location_permission_off_enable">Recueil de position désactivé, cliquez pour l\'autoriser</string>
     <string name="error_location_settings">Erreur %1$d dans les paramètres de tracking</string>
     <string name="unknown_error_location_settings">Erreur inconnue de lecture de position, vérifiez vos paramètres svp</string>
     <!-- ConfigManager -->

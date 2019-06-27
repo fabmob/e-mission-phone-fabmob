@@ -69,7 +69,7 @@
         "nuke-all": "Supprimer buffers et cache",
         "set-ui-channel": "Channel",
         "check-log": "Voir les logs",
-        "check-sensed-data": "Envoyer les données (positions, activités, transitions)",
+        "check-sensed-data": "Données recueillies",
         "check-map": "Vérifier la carte",
         "collection": "Recueil", 
         "sync": "Synchro",
@@ -240,7 +240,7 @@
         "downloading-update": "Mise à jour de l'UI uniquement",
         "extracting-update": "Récupération de la mise à jour",
         "done": "Mise à jour faire, chargement en cours...",
-        "download-new-ui": "Télécharger la mise à jour?.",
+        "download-new-ui": "Télécharger la mise à jour ?",
         "download-not-now": "Pas maintenant",
         "download-apply": "Appliquer"
     }
