@@ -243,5 +243,15 @@
         "download-new-ui": "Télécharger la mise à jour?.",
         "download-not-now": "Pas maintenant",
         "download-apply": "Appliquer"
+    },
+
+    "main-surveys": {
+        "surveys": "Enquêtes",
+        "surveys-ongoing": "Enquêtes en cours",
+        "surveys-completed": "Enquêtes complétées",
+        "no-ongoing-surveys": "Aucune enquête en cours...",
+        "no-completed-surveys" : "Aucune enquête complétée...",
+        "received": "Reçue le",
+        "last-change": "Dernière modif. "
     }
 }

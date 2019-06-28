@@ -11,25 +11,32 @@
         <div class="list card" id="survey-card">
             <h4 class="dashboard-headers" translate>{{'.surveys'}}</h4>
             <div class="item item-divider" translate>{{'.surveys-ongoing'}}</div>
-            <div class="item item-button-right" ng-repeat="survey in ongoingSurveys" ng-if="ongoingSurveys.length > 0">
-                {{survey.title}}
-                <button class="button" ng-click="launchSurvey(survey.url)">
-                    <i class="icon ion-log-in"></i>
-                </button>
+            <div class="item survey" ng-repeat="survey in ongoingSurveys" ng-if="completedSurveys.length > 0"
+                ng-click="launchSurvey(survey.url)">
+                <h2 class="title">{{survey.title}}</h2>
+                <p class="item-note received"><span translate>{{'.received'}}</span> {{survey.received}}</p>
+                <!-- <p class="item-note last-change"><span translate>{{'.last-change'}}</span> {{survey.completed}}</p> -->
+                <!-- <button class="button" ng-click="launchSurvey(survey.url)">
+                    <i class="icon ion-chevron-right"></i>
+                </button> -->
             </div>
-            <div class="item" ng-if="ongoingSurveys.length == 0" translate>
-                {{'.no-ongoing-surveys'}}
+            <div class="item survey" ng-if="ongoingSurveys.length == 0">
+                <p class="no-survey" translate>{{'.no-ongoing-surveys'}}</p>
             </div>
             <div class="item item-divider" translate>{{'.surveys-completed'}}</div>
-            <div class="item item-button-right" ng-repeat="survey in completedSurveys"
-                ng-if="completedSurveys.length > 0">
-                {{survey.title}}
-                <button class="button" ng-click="launchSurvey(survey.url)">
-                    <i class="icon ion-log-in"></i>
-                </button>
+            <div class="item survey" ng-repeat="survey in completedSurveys" ng-if="completedSurveys.length > 0"
+                ng-click="launchSurvey(survey.url)">
+                <h2 class="title">{{survey.title}}</h2>
+                <p class="item-note received"><span translate>{{'.received'}}</span> {{survey.received}}</p>
+                <p class="item-note last-change"><span translate>{{'.last-change'}}</span> {{survey.completed}}</p>
+                <!-- <button class="button" ng-click="launchSurvey(survey.url)">
+                    <i class="icon ion-chevron-right"></i>
+                </button> -->
             </div>
-            <div class="item" ng-if="completedSurveys.length == 0" translate>
-                {{'.no-completed-surveys'}}
+            <div class="item survey" ng-if="completedSurveys.length == 0">
+                <p class="no-survey" translate>{{'.no-completed-surveys'}}</p>
+            </div>
+            <div class="item">
             </div>
         </div>
     </ion-content>

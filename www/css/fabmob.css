@@ -314,10 +314,11 @@ ion-modal-view > ion-header-bar > button,
   background-color: #fff;
   border-radius: 5px;
   display: block;
-  height: 80vh;
+  height: 97%;
+  width: 95%;
   margin: 10px;
   margin-top: 10px;
-  position: relative;
+  position: fixed;
   margin-bottom: 10px !important;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03), 0 2px 3px rgba(0, 0, 0, 0.05);
   /*background: rgba(40,218,183,1);
@@ -329,10 +330,24 @@ ion-modal-view > ion-header-bar > button,
   background: linear-gradient(135deg, rgba(40,218,183,1) 0%, rgba(99,230,199,1) 30%, rgba(94,235,212,1) 51%, rgba(87,235,223,1) 69%, rgba(99,237,226,1) 85%, rgba(127,250,250,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28dab7', endColorstr='#7ffafa', GradientType=1 );*/
   text-align: center;
+  overflow-y: auto
 }
 
-.survey-icon {
-  margin: 0px auto 0px auto;
-  font-size: 25px;
-  height: 25px;
+.survey .title {
+  text-align: left
+}
+
+.survey .last-change {
+  float: right;
+  font-size: 9px;
+}
+
+.survey .received {
+  float: left;
+  font-size: 9px;
+}
+
+.survey .no-survey {
+  color: #54DCC1;
+  font-weight: 700;
 }

@@ -250,6 +250,8 @@
         "surveys-ongoing": "Ongoing surveys",
         "surveys-completed": "Completed surveys",
         "no-ongoing-surveys": "No ongoing surveys",
-        "no-completed-surveys" : "No completed surveys"
+        "no-completed-surveys" : "No completed surveys",
+        "received": "Received:",
+        "last-change": "Last change:"
     }
 }
