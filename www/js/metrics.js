@@ -21,7 +21,6 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
     var MEDIAN_SPEED = "median_speed";
     var COUNT = "count";
     var DISTANCE = "distance";
-
     $scope.onCurrentTrip = function() {
       window.cordova.plugins.BEMDataCollection.getState().then(function(result) {
         Logger.log("Current trip state" + JSON.stringify(result));

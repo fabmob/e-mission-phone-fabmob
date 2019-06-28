@@ -1,0 +1,36 @@
+<ion-view view-title="{{'main-surveys.surveys' | translate}}" class="ion-view-background"
+    translate-namespace="main-surveys">
+    <ion-nav-bar class="bar-stable">
+    </ion-nav-bar>
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon" ng-click="refreshSurveys()">
+            <i class="icon ion-refresh"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list card" id="survey-card">
+            <h4 class="dashboard-headers" translate>{{'.surveys'}}</h4>
+            <div class="item item-divider" translate>{{'.surveys-ongoing'}}</div>
+            <div class="item item-button-right" ng-repeat="survey in ongoingSurveys" ng-if="ongoingSurveys.length > 0">
+                {{survey.title}}
+                <button class="button" ng-click="launchSurvey(survey.url)">
+                    <i class="icon ion-log-in"></i>
+                </button>
+            </div>
+            <div class="item" ng-if="ongoingSurveys.length == 0" translate>
+                {{'.no-ongoing-surveys'}}
+            </div>
+            <div class="item item-divider" translate>{{'.surveys-completed'}}</div>
+            <div class="item item-button-right" ng-repeat="survey in completedSurveys"
+                ng-if="completedSurveys.length > 0">
+                {{survey.title}}
+                <button class="button" ng-click="launchSurvey(survey.url)">
+                    <i class="icon ion-log-in"></i>
+                </button>
+            </div>
+            <div class="item" ng-if="completedSurveys.length == 0" translate>
+                {{'.no-completed-surveys'}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

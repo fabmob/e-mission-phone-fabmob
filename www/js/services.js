@@ -109,6 +109,11 @@ angular.module('emission.services', ['emission.plugin.logger'])
       })
     };
 
+    this.getSurveys = function () {
+      return new Promise(function(resolve, reject) {
+        window.cordova.plugins.BEMServerComm.getUserPersonalData("/survey/get", resolve, reject);
+      });
+    }
     /*
      * key_list = list of keys to retrieve or None for all keys
      * start_time = beginning timestamp for range

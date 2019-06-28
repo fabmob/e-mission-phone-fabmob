@@ -243,5 +243,13 @@
         "download-new-ui": "Download new UI-only update?.",
         "download-not-now": "Not now",
         "download-apply": "Apply"
+    },
+
+    "main-surveys": {
+        "surveys": "Surveys",
+        "surveys-ongoing": "Ongoing surveys",
+        "surveys-completed": "Completed surveys",
+        "no-ongoing-surveys": "No ongoing surveys",
+        "no-completed-surveys" : "No completed surveys"
     }
 }
