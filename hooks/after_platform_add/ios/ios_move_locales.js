@@ -7,7 +7,9 @@ const LOG_NAME = "Adding locales: ";
 
 module.exports = function (context) {
     // If ios platform is not installed, don't even execute
-    if (context.opts.cordova.platforms.indexOf('ios') < 0)
+    var localesFolder = path.join(context.opts.projectRoot, 'locales/');
+
+    if (context.opts.cordova.platforms.indexOf('ios') < 0 || !fs.existsSync(localesFolder))
         return;
     
     console.log(LOG_NAME + "Retrieving application name...")

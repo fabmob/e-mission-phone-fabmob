@@ -6,11 +6,11 @@ const LOG_NAME = "Adding locales: ";
 
 module.exports = function (context) {
     // If Android platform is not installed, don't even execute
-    if (context.opts.cordova.platforms.indexOf('android') < 0)
-        return;
-    
     var localesFolder = path.join(context.opts.projectRoot, 'locales/');
 
+    if (context.opts.cordova.platforms.indexOf('android') < 0 || !fs.existsSync(localesFolder))
+        return;
+    
     var languagesFolders = fs.readdirSync(localesFolder);
     console.log(LOG_NAME + "Languages found -> " + languagesFolders);
     languagesFolders.forEach(function (language) {
