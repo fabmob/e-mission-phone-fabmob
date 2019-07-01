@@ -54,8 +54,8 @@ angular.module('emission.main.surveys', ['nvd3', 'emission.services', 'emission.
     }
 
     $scope.launchSurvey = function (url) {
-        console.log(url)
-        SurveyLaunch.startSurvey(url, "");
+        var lang = $translate.use();
+        SurveyLaunch.startSurvey(url + "&lang=" + lang, "");
         $rootScope.$on('$cordovaInAppBrowser:exit', function(e, event) {
             console.log("exiting, event = "+JSON.stringify(event));
             getSurveys();

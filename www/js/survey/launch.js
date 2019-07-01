@@ -4,7 +4,7 @@ angular.module('emission.survey.launch', ['emission.services',
                     'emission.plugin.logger'])
 
 .factory('SurveyLaunch', function($http, $cordovaInAppBrowser, $ionicPopup, $rootScope,
-    CommHelper, Logger) {
+    CommHelper, Logger, $translate) {
 
     var surveylaunch = {};
     var replace_uuid = function(uuidElementId) {
@@ -110,9 +110,10 @@ angular.module('emission.survey.launch', ['emission.services',
     }
     // END: startSurveyForCompletedTrip
     surveylaunch.startLimeSurvey = function (url, uuidElementId) {
+      var lang = $translate.use();
       CommHelper.getUser().then(function (user) {
         var uuid = user.user_id['$uuid']
-        surveylaunch.startSurvey(url + "?token=" + uuid, uuidElementId);
+        surveylaunch.startSurvey(url + "?token=" + uuid + "&lang=" + lang, uuidElementId);
       });
     }
 
