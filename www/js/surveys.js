@@ -25,7 +25,7 @@ angular.module('emission.main.surveys', ['nvd3', 'emission.services', 'emission.
             surveys.forEach(survey => {
                 // Expired surveys do not need to be shown
                 var expired = false;
-                if (survey.expires != null && new Date() > new Date(survey.expires)) {
+                if (survey.expires != null && moment(new Date()).isAfter(survey.expires)) {
                     expired = true
                 }
                 // We don't want to show a non-active survey because it may be survey hidden by the admin.
