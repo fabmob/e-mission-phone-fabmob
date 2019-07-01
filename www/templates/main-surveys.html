@@ -8,20 +8,23 @@
         </button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <div class="list card" id="survey-card">
-            <h4 class="dashboard-headers" translate>{{'.surveys'}}</h4>
-            <div class="item item-divider" translate>{{'.surveys-ongoing'}}</div>
-            <div class="item survey" ng-repeat="survey in ongoingSurveys" ng-if="completedSurveys.length > 0"
+        <ion-refresher
+        pulling-text="{{'pull-to-refresh' | translate}}"
+        on-refresh="refreshSurveys()">
+        </ion-refresher>
+        <div class="list">
+            <div class="item item-divider" translate>{{'.surveys-unanswered'}}</div>
+            <div class="item survey" ng-repeat="survey in unansweredSurveys" ng-if="unansweredSurveys.length > 0"
                 ng-click="launchSurvey(survey.url)">
                 <h2 class="title">{{survey.title}}</h2>
                 <p class="item-note received"><span translate>{{'.received'}}</span> {{survey.received}}</p>
-                <!-- <p class="item-note last-change"><span translate>{{'.last-change'}}</span> {{survey.completed}}</p> -->
+                <p class="item-note last-change"><span translate>{{'.expires'}}</span> {{survey.expires}}</p>
                 <!-- <button class="button" ng-click="launchSurvey(survey.url)">
                     <i class="icon ion-chevron-right"></i>
                 </button> -->
             </div>
             <div class="item survey" ng-if="ongoingSurveys.length == 0">
-                <p class="no-survey" translate>{{'.no-ongoing-surveys'}}</p>
+                <p class="no-survey" translate>{{'.no-unanswered-surveys'}}</p>
             </div>
             <div class="item item-divider" translate>{{'.surveys-completed'}}</div>
             <div class="item survey" ng-repeat="survey in completedSurveys" ng-if="completedSurveys.length > 0"

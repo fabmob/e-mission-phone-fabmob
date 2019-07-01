@@ -9,7 +9,7 @@ angular.module('emission.main.surveys', ['nvd3', 'emission.services', 'emission.
     
     $scope.surveys = {}
     $scope.completedSurveys = [];
-    $scope.ongoingSurveys = [];
+    $scope.unansweredSurveys = [];
 
     var getSurveys = function () {
         $ionicLoading.show({
@@ -20,21 +20,32 @@ angular.module('emission.main.surveys', ['nvd3', 'emission.services', 'emission.
             $ionicLoading.hide();
             var surveys = result.surveys;
             $scope.completedSurveys = [];
-            $scope.ongoingSurveys = [];
-            Logger.log("User has "+ result.survey_count + "surveys, surveys are:" + JSON.stringify(result.surveys));
+            $scope.unansweredSurveys = [];
+            Logger.log("User has " + result.survey_count + " surveys, surveys are:" + JSON.stringify(result.surveys));
             surveys.forEach(survey => {
-                if (survey.completed == "N" && survey.active == "Y") {
+                // Expired surveys do not need to be shown
+                var expired = false;
+                if (survey.expires != null && new Date() > new Date(survey.expires)) {
+                    expired = true
+                }
+                // We don't want to show a non-active survey because it may be survey hidden by the admin.
+                if (survey.completed == "N" && survey.active == "Y" && !expired) {
+                    // If null then it never expires else we have a date to parse
+                    if (survey.expires != null){ 
+                        survey.expires = moment(survey.expires).format('LL');
+                    } else {
+                        survey.expires = $translate.instant('main-surveys.never');
+                    }
                     survey.received = moment(survey.received).format('LL');
-                    $scope.ongoingSurveys.push(survey);
-                } else if (survey.completed != "N" && survey.active == "Y") {
+                    $scope.unansweredSurveys.push(survey);
+                } else if (survey.completed != "N" && survey.active == "Y" && !expired) {
                     survey.completed = moment(survey.completed).format('LL');
                     survey.received = moment(survey.received).format('LL');
                     $scope.completedSurveys.push(survey);
-                } else {
-                    console.log(survey)
                 }
             });
             $scope.surveys = surveys.surveys;
+            $scope.$broadcast('scroll.refreshComplete');
         });
     }
 

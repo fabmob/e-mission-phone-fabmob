@@ -2,6 +2,7 @@
     "loading" : "Loading...",
     "map-refresh": "Refresh",
     "map-fixmap": "Fix Map",
+    "pull-to-refresh": "Pull to refresh",
 
     "weekdays-all": "All",
     "weekdays-select": "Select day of the week",
@@ -247,11 +248,13 @@
 
     "main-surveys": {
         "surveys": "Surveys",
-        "surveys-ongoing": "Ongoing surveys",
+        "surveys-unanswered": "Unanswered surveys",
         "surveys-completed": "Completed surveys",
-        "no-ongoing-surveys": "No ongoing surveys",
+        "no-unanswered-surveys": "No unanswered surveys",
         "no-completed-surveys" : "No completed surveys",
         "received": "Received:",
-        "last-change": "Last change:"
+        "expires": "Expires:",
+        "last-change": "Last change:",
+        "never": "Never"
     }
 }
