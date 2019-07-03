@@ -19,8 +19,8 @@
         "platform-specific-message-ios": "Glisser vers la G ou toucher pour ajouter une info sur ce déplacement.",
         "platform-specific-message-android": "Voir les options ou toucher l'écran pour ajouter une info.",
         "platform-specific-message-other": "Toucher l'écran pour ajouter une info sur ce déplacement",
-        "notifications-muted": "Arrêt des notifications en fin de déplacment",
-        "notifications-reenabled": "Peut être réactivé depuis Profil / Dev Zone ou réactivez maintenant.",
+        "notifications-muted": "Arrêt des notifications en fin de déplacement",
+        "notifications-reenabled": "Peut être réactivé depuis Profil / Dev Zone, ou réactivez maintenant.",
         "muted": "Silencieux",
         "unmute": "Réactiver",
         "keep-muted": "Laisser silencieux"
@@ -70,9 +70,9 @@
         "nuke-all": "Supprimer buffers et cache",
         "set-ui-channel": "Channel",
         "check-log": "Voir les logs",
-        "check-sensed-data": "Voir les sensed data",
+        "check-sensed-data": "Données recueillies",
         "check-map": "Vérifier la carte",
-        "collection": "Recueil",
+        "collection": "Recueil", 
         "sync": "Synchro",
         "transition-notify": "Notifier une transition"
     },
@@ -196,9 +196,9 @@
         "in-vehicle": "VEHICULE",
         "select-travel-mode" : "Choix du mode",
         "cancel": "Annuler",
-        "tour-datepicker": "This heatmap shows the aggregate data for all E-mission users. Select the dates you want to see, and filter by hours of the day (24h format) and days of the week. For example, if you enter 16 and 19 in the last field, and select Monday and Friday, you'll see the Heatmap filtered to show the traffic on weekdays between 4pm and 7pm.",
-        "tour-mode": "Click here to filter your results by mode of transportation. The default is to show all modes.",
-        "tour-get": "Click here to generate the heatmap."
+        "tour-datepicker": "Cette carte superpose les données de tous les utilisateurs. Choisissez les dates, filtrez selon l'heure et le jour de la semaine.",
+        "tour-mode": "Cliquez ici pour filtrer par mode. Par défaut, tous les modes sont affichés.",
+        "tour-get": "Cliquez ici pour générer la carte."
     },
     
     "details":{
@@ -241,7 +241,7 @@
         "downloading-update": "Mise à jour de l'UI uniquement",
         "extracting-update": "Récupération de la mise à jour",
         "done": "Mise à jour faire, chargement en cours...",
-        "download-new-ui": "Télécharger la mise à jour?.",
+        "download-new-ui": "Télécharger la mise à jour ?",
         "download-not-now": "Pas maintenant",
         "download-apply": "Appliquer"
     },
