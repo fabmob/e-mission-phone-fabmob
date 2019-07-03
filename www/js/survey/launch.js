@@ -4,7 +4,7 @@ angular.module('emission.survey.launch', ['emission.services',
                     'emission.plugin.logger'])
 
 .factory('SurveyLaunch', function($http, $cordovaInAppBrowser, $ionicPopup, $rootScope,
-    CommHelper, Logger) {
+    CommHelper, Logger, $translate) {
 
     var surveylaunch = {};
     var replace_uuid = function(uuidElementId) {
@@ -109,6 +109,13 @@ angular.module('emission.survey.launch', ['emission.services',
       });
     }
     // END: startSurveyForCompletedTrip
+    surveylaunch.startLimeSurvey = function (url, uuidElementId) {
+      var lang = $translate.use();
+      CommHelper.getUser().then(function (user) {
+        var uuid = user.user_id['$uuid']
+        surveylaunch.startSurvey(url + "?token=" + uuid + "&lang=" + lang, uuidElementId);
+      });
+    }
 
     surveylaunch.startSurvey = function (url, uuidElementId) {
       // THIS LINE FOR inAppBrowser
@@ -153,7 +160,11 @@ angular.module('emission.survey.launch', ['emission.services',
             if (angular.isDefined(survey_spec) &&
                 angular.isDefined(survey_spec.url) &&
                 angular.isDefined(survey_spec.uuidElementId)) {
+              if (angular.isDefined(survey_spec.type) && survey_spec.type == "limesurvey") {
+                surveylaunch.startLimeSurvey(survey_spec.url, survey_spec.uuidElementId);
+              } else {
                 surveylaunch.startSurvey(survey_spec.url, survey_spec.uuidElementId);
+              }
             } else {
                 $ionicPopup.alert("survey was not specified correctly. spec is "+JSON.stringify(survey_spec));
             }

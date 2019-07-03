@@ -7,6 +7,7 @@ angular.module('emission.main', ['emission.main.recent',
                                  'emission.main.common',
                                  'emission.main.heatmap',
                                  'emission.main.metrics',
+                                 'emission.main.surveys',
                                  'emission.tripconfirm.posttrip.map',
                                  'emission.services'])
 
@@ -125,6 +126,16 @@ angular.module('emission.main', ['emission.main.recent',
       'main-control': {
         templateUrl: 'templates/recent/log.html',
         controller: 'logCtrl'
+      }
+    }
+  })
+
+  .state('root.main.surveys', {
+    url: '/surveys',
+    views: {
+      'main-surveys': {
+        templateUrl: 'templates/main-surveys.html',
+        controller: 'SurveysCtrl'
       }
     }
   });

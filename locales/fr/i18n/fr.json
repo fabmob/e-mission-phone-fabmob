@@ -2,6 +2,7 @@
     "loading" : "Chargement...",
     "map-refresh": "Rafraîchir",
     "map-fixmap": "Ré-afficher la Carte",
+    "pull-to-refresh": "Tirer pour rafraîchir",
 
     "weekdays-all": "Tout",
     "weekdays-select": "Jour de la semaine",
@@ -243,5 +244,17 @@
         "download-new-ui": "Télécharger la mise à jour ?",
         "download-not-now": "Pas maintenant",
         "download-apply": "Appliquer"
+    },
+
+    "main-surveys": {
+        "surveys": "Enquêtes",
+        "surveys-unanswered": "Enquêtes non renseignées",
+        "surveys-completed": "Enquêtes complétées",
+        "no-unanswered-surveys": "Aucune enquête non renseignée",
+        "no-completed-surveys" : "Aucune enquête complétée...",
+        "received": "Reçue le",
+        "expires": "Expire :",
+        "last-change": "Dernière modif. ",
+        "never": "Jamais"
     }
 }
