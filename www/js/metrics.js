@@ -770,14 +770,22 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       $scope.data.distance = getDataFromMetrics(agg_metrics.distance, metric2valUser);
       $scope.data.duration = getDataFromMetrics(agg_metrics.duration, metric2valUser);
       $scope.data.speed = getDataFromMetrics(agg_metrics.speed, metric2valUser);
-      $scope.countOptions = angular.copy($scope.options)
+      $scope.countOptions = angular.copy($scope.options);
       $scope.countOptions.chart.yAxis.axisLabel = $translate.instant('metrics.trips-yaxis-number');
-      $scope.distanceOptions = angular.copy($scope.options)
-      $scope.distanceOptions.chart.yAxis.axisLabel = 'm';
-      $scope.durationOptions = angular.copy($scope.options)
-      $scope.durationOptions.chart.yAxis.axisLabel = 'secs'
-      $scope.speedOptions = angular.copy($scope.options)
-      $scope.speedOptions.chart.yAxis.axisLabel = 'm/sec'
+      $scope.distanceOptions = angular.copy($scope.options);
+      $scope.distanceOptions.chart.yAxis.axisLabel = 'km';
+      $scope.distanceOptions.chart.y = function (d) { return d[1] / 1000; };
+      // $scope.distanceOptions.chart.yAxis.axisLabel = 'm';
+      $scope.durationOptions = angular.copy($scope.options);
+      $scope.durationOptions.chart.yAxis.axisLabel = moment.duration().hours();
+      $scope.durationOptions.chart.y = function (d) { return d[1] / 60; };
+      // $scope.durationOptions.chart.yAxis.axisLabel = 'secs';
+      // This seems a bit brutal but it allows us to retrieve the "hour" string in any languages
+      $scope.durationOptions.chart.yAxis.axisLabel = moment.localeData().relativeTime(1, false, 'hh').replace("1 ", "");
+      $scope.speedOptions = angular.copy($scope.options);
+      $scope.speedOptions.chart.y = function (d) { return d[1] * 3.6; };
+      $scope.speedOptions.chart.yAxis.axisLabel = 'km/h';
+      // $scope.speedOptions.chart.yAxis.axisLabel = 'm/sec';
     };
     $scope.pandaFreqOptions = [
       {text: $translate.instant('metrics.pandafreqoptions-daily'), value: 'D'},
