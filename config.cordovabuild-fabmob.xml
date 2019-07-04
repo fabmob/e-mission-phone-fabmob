@@ -11,6 +11,7 @@
     <access origin="*" />
     <allow-navigation href="*" />
     <hook src="package-hooks/ios9_allow_http.sh" type="after_prepare" />
+    <hook src="hooks/before_prepare/download_translation.js" type="before_prepare" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
