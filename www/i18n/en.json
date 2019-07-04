@@ -127,7 +127,9 @@
         "calorie-data-change-decrease": " decrease over a week",
         "carbon-data-change-increase": " increase over a week",
         "carbon-data-change-decrease": " decrease over a week",
-        "pick-a-date": "Pick a date"
+        "pick-a-date": "Pick a date",
+        "trips": "trips",
+        "custom": "Custom"
     },
 
     "diary": {

@@ -96,7 +96,7 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       showFilter: false,
       showVis: true,
       showResult: true,
-      current: "Last week",
+      current: $translate.instant('metrics.last-week'),
       showChart: false,
       showSummary: true,
       showMe: true,
@@ -430,7 +430,7 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
         template: $translate.instant('loading')
       });
       if(!first){
-        $scope.uictrl.current = "Custom";
+        $scope.uictrl.current = $translate.instant('metrics.custom');
       }
       //$scope.uictrl.showRange = false;
       //$scope.uictrl.showFilter = false;
@@ -921,7 +921,7 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
           var unit = "";
           switch(metric) {
             case "count":
-              unit = "trips";
+              unit = $translate.instant('metrics.trips');
               break;
             case "distance":
               unit = "m";
@@ -930,15 +930,17 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
               unit = "s";
               break;
             case "median_speed":
-              unit = "m/s";
+              unit = "km/h";
+              // unit = "m/s";
               break;
           }
           if (metric === "median_speed") {
-            data[i].values = Math.round(temp / data[i].values.length  ) + ' ' + unit;
+            data[i].values = Math.round((temp / data[i].values.length)*3.6) + ' ' + unit;
           } else if(metric === "distance" && temp.toString().length > 4){
             data[i].values = Math.round(temp / 1000) + ' ' + "km";
-          } else if(metric === "duration" && temp > 60){
-            data[i].values = Math.round(temp / 60) + ' ' + "mins";
+          } else if (metric === "duration") {
+            // A bit radical, but it will always shows human readable values.
+            data[i].values = moment.duration(temp, "seconds").humanize();
           } else {
             data[i].values = Math.round(temp) + ' ' + unit;
           }
