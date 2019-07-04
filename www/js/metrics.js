@@ -778,7 +778,7 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       // $scope.distanceOptions.chart.yAxis.axisLabel = 'm';
       $scope.durationOptions = angular.copy($scope.options);
       $scope.durationOptions.chart.yAxis.axisLabel = moment.duration().hours();
-      $scope.durationOptions.chart.y = function (d) { return d[1] / 60; };
+      $scope.durationOptions.chart.y = function (d) { return d[1] / 3600; };
       // $scope.durationOptions.chart.yAxis.axisLabel = 'secs';
       // This seems a bit brutal but it allows us to retrieve the "hour" string in any languages
       $scope.durationOptions.chart.yAxis.axisLabel = moment.localeData().relativeTime(1, false, 'hh').replace("1 ", "");
