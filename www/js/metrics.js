@@ -394,6 +394,10 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
         console.log('Illegal mode');
         return;
       }
+      $scope.currentlyDisplaying = {
+        tempFrom: moment.unix(tempFrom).format('L'),
+        tempTo: moment.unix(tempTo).format('L')
+      };
       console.log("Sending data "+JSON.stringify(data));
       callback()
     };

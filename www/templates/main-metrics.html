@@ -18,25 +18,33 @@
         <div ng-class="chartButtonClass()" ng-click="showChart()" translate>{{'.chart'}}</div>
       </div>
     </div>
-    <div ng-if="uictrl.showChart" style="width:50%; float:right; padding-top: 10px;">
+    <!-- <div ng-if="uictrl.showChart" style="width:50%; float:right; padding-top: 10px;">
       <div class="metric-change-data-button hvcenter" ng-click="openModal()" translate>{{'.change-data'}}</div>
     </div>
-    <div ng-if="uictrl.showSummary" style="width:100%; float:right; padding-top: 10px;">
+    <div ng-if="uictrl.showSummary" style="width:100%; float:right; padding-top: 10px; padding-bottom: 10px">
       <div class="metric-change-data-button hvcenter" ng-click="openModal()" translate>{{'.change-data'}}</div>
+    </div> -->
+    <div class="card" id="card-currently-displaying">
+      <h4 class="currently-displaying-header">&nbsp; {{currentlyDisplaying.tempFrom}} &rarr; {{currentlyDisplaying.tempTo}}</h4>
+      <div class="change-data-button  hvcenter" ng-click="openModal()" translate>{{'.change-data'}}</div>
     </div>
-    <div ng-if="uictrl.showChart" style="width:50%;float:right; padding-top: 10px">
-      <div class="metric-second-half">
-          <i class="icon ion-ios-person metric-icon"></i>
-          <label ng-click="toggle()" class="toggle metric-me-toggle">
-            <input type="checkbox" ng-checked="!uictrl.showMe" ng-disabled="!uictrl.hasAggr"> <!-- me on left, off -->
-            <div class="track toggle-color">
-              <div class="handle"></div>
-            </div>
-          </label>
-          <i class="icon ion-ios-people metric-icon"></i>
-        </div>
-    </div>
-    <div ng-if="uictrl.showChart" style="width:100%; padding:10px;padding-top: 50px;">
+
+    <div ng-if="uictrl.showChart" style="width:100%; padding-top: 5px" class="hvcenter">
+    <!-- <div ng-if="uictrl.showChart" style="width:50%;float:right; padding-top: 10px"> -->
+        <div class="metric-second-half">
+            <i class="icon ion-ios-person metric-icon"></i>
+            <label ng-click="toggle()" class="toggle metric-me-toggle">
+              <input type="checkbox" ng-checked="!uictrl.showMe" ng-disabled="!uictrl.hasAggr"> <!-- me on left, off -->
+              <div class="track toggle-color">
+                <div class="handle"></div>
+              </div>
+            </label>
+            <i class="icon ion-ios-people metric-icon"></i>
+          </div>
+      </div>
+
+    <div ng-if="uictrl.showChart" style="width:100%; padding:10px; padding-top:10px;">
+    <!-- <div ng-if="uictrl.showChart" style="width:100%; padding:10px;padding-top: 50px;"> -->
       <div class="metric-half">
         <div ng-class="distanceButtonClass()" ng-click="showDistance()" translate>{{'.distance'}}</div>
         <div ng-class="tripsButtonClass()" ng-click="showTrips()" translate>{{'.trips'}}</div>
