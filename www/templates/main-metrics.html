@@ -28,9 +28,12 @@
       <h4 class="currently-displaying-header">&nbsp; {{currentlyDisplaying.tempFrom}} &rarr; {{currentlyDisplaying.tempTo}}</h4>
       <div class="change-data-button  hvcenter" ng-click="openModal()" translate>{{'.change-data'}}</div>
     </div>
+    
+    <div ng-if="uictrl.showChart" style="width:50%;float:left; padding-top: 5px">
+        <div class="metric-change-data-button hvcenter" ng-click="openModal()" translate>{{selectCtrl.pandaFreqString}}</div>
+    </div>
 
-    <div ng-if="uictrl.showChart" style="width:100%; padding-top: 5px" class="hvcenter">
-    <!-- <div ng-if="uictrl.showChart" style="width:50%;float:right; padding-top: 10px"> -->
+    <div ng-if="uictrl.showChart" style="width:50%;float:right; padding-top: 5px">
         <div class="metric-second-half">
             <i class="icon ion-ios-person metric-icon"></i>
             <label ng-click="toggle()" class="toggle metric-me-toggle">
