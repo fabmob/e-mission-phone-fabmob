@@ -96,7 +96,8 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       showFilter: false,
       showVis: true,
       showResult: true,
-      current: $translate.instant('metrics.last-week'),
+      current: true,
+      currentString: $translate.instant('metrics.last-week'),
       showChart: false,
       showSummary: true,
       showMe: true,
@@ -192,10 +193,12 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       return $scope.userData.weightUnit == 0? "unit-toggle-right-active hvcenter" : "unit-toggle-right hvcenter";
     }
     $scope.currentQueryForCalorie = function() {
-      return $scope.uictrl.current == "Last week"? "user-calorie-percentage" : "user-calorie-no-percentage";
+      // return $scope.uictrl.current ==  "Last Week" ? "user-calorie-percentage" : "user-calorie-no-percentage";
+      return $scope.uictrl.current ? "user-calorie-percentage" : "user-calorie-no-percentage";
     }
     $scope.currentQueryForCarbon = function() {
-      return $scope.uictrl.current == "Last week"? "user-carbon-percentage" : "user-carbon-no-percentage";
+      // return $scope.uictrl.current == "Last Week" ? "user-carbon-percentage" : "user-carbon-no-percentage";
+      return $scope.uictrl.current ? "user-carbon-percentage" : "user-carbon-no-percentage";
     }
     $scope.showRange = function() {
       if ($scope.uictrl.showFilter) {
@@ -434,7 +437,8 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
         template: $translate.instant('loading')
       });
       if(!first){
-        $scope.uictrl.current = $translate.instant('metrics.custom');
+        $scope.uictrl.currentString = $translate.instant('metrics.custom');
+        $scope.uictrl.current = false;
       }
       //$scope.uictrl.showRange = false;
       //$scope.uictrl.showFilter = false;
