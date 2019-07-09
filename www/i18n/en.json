@@ -74,7 +74,9 @@
         "check-map": "Check map",
         "collection": "Collection",
         "sync": "Sync",
-        "transition-notify": "Transition Notify"
+        "transition-notify": "Transition Notify",
+        "status": "Status",
+        "settings": "Settings"
     },
     
     "general-settings":{
@@ -112,6 +114,10 @@
             "cell": "Cell",
             "unknown": "Unknown",
             "none": "None"
+        },
+        "alert-tracking":{
+            "title": "Please enable Tracking",
+            "template": "You tried to start a trip without enabling the tracking. Please enable it before trying again."
         }
     },
 

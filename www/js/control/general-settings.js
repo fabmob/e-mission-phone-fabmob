@@ -448,7 +448,7 @@ angular.module('emission.main.control',['emission.services',
         } else {
             $scope.expanded = true;
             $ionicScrollDelegate.resize();
-            $ionicScrollDelegate.scrollTo(0, 1000, true);
+            $ionicScrollDelegate.scrollTo(0, 500, true);
         }
     }
     $scope.toggleUserData = function() {
@@ -587,8 +587,10 @@ angular.module('emission.main.control',['emission.services',
                         $scope.showStopButton();
                         return $translate.instant('general-settings.states.ongoing_trip');
                     case "start":
+                        $scope.showStopButton();
                         return $translate.instant('general-settings.states.start');
                     case "tracking_stopped":
+                        $scope.showStartButton();
                         return $translate.instant('general-settings.states.tracking_stopped');
                     case "waiting_for_trip_start":
                         $scope.showStartButton();
@@ -599,12 +601,16 @@ angular.module('emission.main.control',['emission.services',
             } else if ($scope.isIOS()) {
                 switch (state.substring(6)) {
                     case "ONGOING_TRIP":
+                        $scope.showStopButton();
                         return $translate.instant('general-settings.states.ongoing_trip');
                     case "START":
+                        $scope.showStopButton();
                         return $translate.instant('general-settings.states.start');
                     case "TRACKING_STOPPED":
+                        $scope.showStartButton();
                         return $translate.instant('general-settings.states.tracking_stopped');
                     case "WAITING_FOR_TRIP_START":
+                        $scope.showStartButton();
                         return $translate.instant('general-settings.states.waiting_for_trip_start');
                     default:
                         return $translate.instant('general-settings.states.unknown');
@@ -628,6 +634,13 @@ angular.module('emission.main.control',['emission.services',
     }
 
     $scope.startForce = function () {
-        ControlCollectionHelper.forceTransition('EXITED_GEOFENCE');
+        if (!$scope.settings.collect.trackingOn) {
+            $ionicPopup.alert({
+                title: $translate.instant('general-settings.alert-tracking.title'),
+                template: $translate.instant('general-settings.alert-tracking.template')
+            })
+        } else {
+            ControlCollectionHelper.forceTransition('EXITED_GEOFENCE');
+        }
     }
 });
