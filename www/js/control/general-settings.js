@@ -24,6 +24,11 @@ angular.module('emission.main.control',['emission.services',
                CalorieCal, ClientStats, CommHelper, Logger,
                $translate) {
 
+    $scope.uictrl = {
+        startButton: true,
+        stopButton: false
+    }
+    
     var datepickerObject = {
       todayLabel: $translate.instant('list-datepicker-today'),  //Optional
       closeLabel: $translate.instant('list-datepicker-close'),  //Optional
@@ -239,6 +244,8 @@ angular.module('emission.main.control',['emission.services',
         $scope.settings.tnotify = {};
         $scope.settings.auth = {};
         $scope.settings.connect = {};
+        $scope.settings.status = {};
+
         $scope.settings.channel = function(newName) {
           return arguments.length ? (UpdateCheck.setChannel(newName)) : $scope.settings.storedChannel;
         };
@@ -259,6 +266,9 @@ angular.module('emission.main.control',['emission.services',
             });
         });
         $scope.getUserData();
+        $scope.getLocationStatus();
+        $scope.getWiFiStatus();
+        $scope.settings.status.connection = $scope.getConnectionState();
     };
 
     $scope.returnToIntro = function() {
@@ -511,5 +521,113 @@ angular.module('emission.main.control',['emission.services',
         }, function(msg) {
             console.log("Sharing failed with message: " + msg);
         });
+    }
+
+    $scope.getLocationStatus = function () {
+            cordova.plugins.diagnostic.isLocationAvailable(function (isLocationAvailable) {
+                console.log("Location status is " + (isLocationAvailable ? "enabled" : "disabled"));
+                return $scope.settings.status.location = isLocationAvailable ? $translate.instant('general-settings.location.enabled') : $translate.instant('general-settings.location.disabled');
+            }, function (error) {
+                Logger.displayError("Error reading location status ", error);
+                return $scope.settings.status.location = false;
+            });
+    };
+
+    $scope.getWiFiStatus = function () {
+        cordova.plugins.diagnostic.isWifiEnabled(function (isWifiEnabled) {
+            console.log("Wi-Fi status is " + (isWifiEnabled ? "enabled" : "disabled"));
+            return $scope.settings.status.wifi = isWifiEnabled ? $translate.instant('general-settings.wifi.enabled') : $translate.instant('general-settings.wifi.disabled');
+        }, function (error) {
+            Logger.displayError("Error reading Wi-Fi status ", error);
+            return $scope.settings.status.wifi = false;
+        });
+    };
+
+    $scope.getConnectionState = function () {
+        switch (navigator.connection.type) {
+            case "cell":
+                return $translate.instant('general-settings.network.cell');
+            case "2g":
+                return "2G";
+            case "3g":
+                return "3G";
+            case "4g":
+                return "4G";
+            case "wifi":
+                return "Wi-Fi";
+            case "none":
+                return $translate.instant('general-settings.network.none');
+            default:
+                return $translate.instant('general-settings.network.unknown');
+        }
+    }
+    $scope.wifiIconClass = function() {
+        return $scope.settings.status.wifi == $translate.instant('general-settings.wifi.enabled') ? "balanced" : "assertive";
+    }
+
+    $scope.locationIconClass = function() {
+        return $scope.settings.status.location == $translate.instant('general-settings.location.enabled') ? "balanced" : "assertive";
+    }
+
+    $scope.connectionIconClass = function () {
+        if ($scope.settings.status.connection == "4G" || $scope.settings.status.connection == "Wi-Fi") {
+            return "balanced";
+        } else if ($scope.settings.status.connection == "3G") {
+            return "energized";
+        } else {
+            return "assertive";
+        }
+    }
+
+    $scope.parseStatetoUser = function(state) {
+        if (state) {
+            if ($scope.isAndroid()) {
+                switch (state.substring(12)) {
+                    case "ongoing_trip":
+                        $scope.showStopButton();
+                        return $translate.instant('general-settings.states.ongoing_trip');
+                    case "start":
+                        return $translate.instant('general-settings.states.start');
+                    case "tracking_stopped":
+                        return $translate.instant('general-settings.states.tracking_stopped');
+                    case "waiting_for_trip_start":
+                        $scope.showStartButton();
+                        return $translate.instant('general-settings.states.waiting_for_trip_start');
+                    default:
+                        return $translate.instant('general-settings.states.unknown');
+                }
+            } else if ($scope.isIOS()) {
+                switch (state.substring(6)) {
+                    case "ONGOING_TRIP":
+                        return $translate.instant('general-settings.states.ongoing_trip');
+                    case "START":
+                        return $translate.instant('general-settings.states.start');
+                    case "TRACKING_STOPPED":
+                        return $translate.instant('general-settings.states.tracking_stopped');
+                    case "WAITING_FOR_TRIP_START":
+                        return $translate.instant('general-settings.states.waiting_for_trip_start');
+                    default:
+                        return $translate.instant('general-settings.states.unknown');
+                }
+            }
+        }
+    }
+
+    $scope.showStopButton = function () {
+        $scope.uictrl.stopButton = true;
+        $scope.uictrl.startButton = false;
+    }
+
+    $scope.showStartButton = function () {
+        $scope.uictrl.stopButton = false;
+        $scope.uictrl.startButton = true;
+    }
+
+    $scope.endForce = function () {
+        ControlCollectionHelper.forceTransition('STOPPED_MOVING');
+    }
+
+    $scope.startForce = function () {
+        ControlCollectionHelper.forceTransition('EXITED_GEOFENCE');
     }
 });

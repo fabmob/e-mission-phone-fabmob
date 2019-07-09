@@ -92,7 +92,27 @@
         "consented-ok": "OK",
         "share-message": "Join me in making transportation greener and healthier \nDownload the emission app:",
         "share-subject": "Emission - UC Berkeley Research Project",
-        "share-url": "https://bic2cal.eecs.berkeley.edu/#download"
+        "share-url": "https://bic2cal.eecs.berkeley.edu/#download",
+        "states":{
+            "ongoing_trip": "Ongoing Trip",
+            "start": "Start",
+            "tracking_stopped": "Tracking Stopped",
+            "waiting_for_trip_start": "Waiting for trip start",
+            "unknown": "Unknown"
+        },
+        "wifi":{
+            "enabled": "Enabled",
+            "disabled": "Disabled"
+        },
+        "location":{
+            "enabled": "Enabled",
+            "disabled": "Disabled"
+        },
+        "network":{
+            "cell": "Cell",
+            "unknown": "Unknown",
+            "none": "None"
+        }
     },
 
     "metrics":{
