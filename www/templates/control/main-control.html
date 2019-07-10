@@ -31,11 +31,11 @@
           <button 
             class="button icon-left ion-stop button-clear button-assertive no-animate" 
             ng-show="!uictrl.startButton && uictrl.stopButton" ng-click="endForce()"
-            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'ONGOING_TRIP'"> Stop Trip</button>
+            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'ONGOING_TRIP'" translate> {{'.stop-trip'}}</button>
           <button 
             class="button icon-left ion-play button-clear button-balanced no-animate" 
             ng-show="uictrl.startButton && !uictrl.stopButton" ng-click="startForce()"
-            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'WAITING_FOR_TRIP_START'"> Start Trip</button>
+            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'WAITING_FOR_TRIP_START'" translate> {{'.start-trip'}}</button>
         </div>
       </div>
       <div class="item item-location">
