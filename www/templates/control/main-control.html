@@ -32,6 +32,10 @@
           <button class="button icon-left ion-play button-clear button-balanced no-animate" ng-show="uictrl.startButton && !uictrl.stopButton" ng-click="startForce()"> Start Trip</button>
         </div>
       </div>
+      <div class="item item-location">
+          <span class="item-note current-location-note" translate>{{'.current-location'}}</span><br>
+          <h3 class="item-text-wrap">{{settings.obj.properties.display_name}}</h3>
+      </div>
       <div class="item item-divider" translate>{{'.settings'}}</div>
       <div class="control-list-item">
         <div class="control-list-text">{{settings.auth.email}}</div>

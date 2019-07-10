@@ -76,7 +76,8 @@
         "sync": "Sync",
         "transition-notify": "Transition Notify",
         "status": "Status",
-        "settings": "Settings"
+        "settings": "Settings",
+        "current-location": "Current location:"
     },
     
     "general-settings":{
@@ -96,10 +97,10 @@
         "share-subject": "Emission - UC Berkeley Research Project",
         "share-url": "https://bic2cal.eecs.berkeley.edu/#download",
         "states":{
-            "ongoing_trip": "Ongoing Trip",
+            "ongoing-trip": "Ongoing Trip",
             "start": "Start",
-            "tracking_stopped": "Tracking Stopped",
-            "waiting_for_trip_start": "Waiting for trip start",
+            "tracking-stopped": "Tracking Stopped",
+            "waiting-for-trip-start": "Waiting for trip start",
             "unknown": "Unknown"
         },
         "wifi":{
@@ -116,9 +117,18 @@
             "none": "None"
         },
         "alert-tracking":{
-            "title": "Please enable Tracking",
-            "template": "You tried to start a trip without enabling the tracking. Please enable it before trying again."
-        }
+            "please-enable-tracking": "Please enable Tracking",
+            "start-trip-without-tracking": "You tried to start a trip without enabling the tracking. Please enable it before trying again."
+        },
+        "confirm-popup":{
+            "warning": "Warning",
+            "forcing-end-trip-warning": "Forcing the end of the trip can cause bugs. Do you really want to stop the trip?",
+            "forcing-start-trip-warning": "Forcing the start trip can cause bugs. Do you really want to start a trip?",
+            "cancel": "Cancel",
+            "confirm": "Confirm"
+        },
+        "retrieving-location": "Retrieving location...",
+        "cannot-retrieve-position-location-disabled": "Location is disabled, cannot retrieve your position."
     },
 
     "metrics":{

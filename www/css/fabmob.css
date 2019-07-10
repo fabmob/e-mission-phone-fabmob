@@ -381,6 +381,9 @@ h4.currently-displaying-header{
   margin-bottom: 0px !important;
 }
 
+/* ========== ========== ========== ========== ========== */
+/* main-control.html */
+/* ========== ========== ========== ========== ========== */
 .change-data-button {
   float: right;
   color: var(--fabmob-color-blue-a);
@@ -422,3 +425,13 @@ h4.currently-displaying-header{
   -webkit-transition: none !important;
   transition: none !important;
 }
+
+.item-location {
+  padding-top: 5px;
+}
+
+.item-location .item-note {
+  float: left;
+  font-size: 10px;
+}
+
