@@ -28,8 +28,14 @@
           <p>{{parseStatetoUser(settings.collect.state)}}</p>
         </div>
         <div class="col hvcenter main-control-panel">
-          <button class="button icon-left ion-stop button-clear button-assertive no-animate" ng-show="!uictrl.startButton && uictrl.stopButton" ng-click="endForce()"> Stop Trip</button>
-          <button class="button icon-left ion-play button-clear button-balanced no-animate" ng-show="uictrl.startButton && !uictrl.stopButton" ng-click="startForce()"> Start Trip</button>
+          <button 
+            class="button icon-left ion-stop button-clear button-assertive no-animate" 
+            ng-show="!uictrl.startButton && uictrl.stopButton" ng-click="endForce()"
+            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'ONGOING_TRIP'"> Stop Trip</button>
+          <button 
+            class="button icon-left ion-play button-clear button-balanced no-animate" 
+            ng-show="uictrl.startButton && !uictrl.stopButton" ng-click="startForce()"
+            ng-disabled="parseState(settings.collect.state).toUpperCase() != 'WAITING_FOR_TRIP_START'"> Start Trip</button>
         </div>
       </div>
       <div class="item item-location">
