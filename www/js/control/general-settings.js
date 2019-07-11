@@ -454,7 +454,7 @@ angular.module('emission.main.control',['emission.services',
         } else {
             $scope.expanded = true;
             $ionicScrollDelegate.resize();
-            $ionicScrollDelegate.scrollTo(0, 500, true);
+            $ionicScrollDelegate.scrollTo(0, 620, true);
         }
     }
     $scope.toggleUserData = function() {
