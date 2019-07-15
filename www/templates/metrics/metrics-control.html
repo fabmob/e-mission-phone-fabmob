@@ -6,9 +6,9 @@
   <ion-content class="padding">
   <div style="height: 40px; width: 100%; margin-bottom: 5px;"> <!-- query control -->
     <div class="metric-basic">
-      <div class="metric-current-title hvcenter">{{ uictrl.current }}</div>
+      <div class="metric-current-title hvcenter">{{ uictrl.currentString }}</div>
       <div ng-class="rangeButtonClass()" ng-click="showRange()" translate>{{'.range'}}</div>
-      <div ng-class="filterButtonClass()" ng-click="showFilter()" translate>{{'.filter'}}</div>
+      <!-- <div ng-class="filterButtonClass()" ng-click="showFilter()" translate>{{'.filter'}}</div> -->
     </div>
   </div>
   <div ng-if="uictrl.showRange"> <!-- range -->
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <div ng-if="uictrl.showFilter">
+  <!-- <div ng-if="uictrl.showFilter">
   <div style="height: 40px; width: 100%;">
     <div class="metric-filter-title" translate>{{'.from'}}</div>
     <input class="metric-filter-year hvcenter" placeholder="yyyy" ng-model="selectCtrl.fromDateLocalDate.year"></input>
@@ -68,7 +68,7 @@
   <div class="metric-right">
     <div class="metric-freq-button hvcenter" ng-click="changePandaFreq()">{{selectCtrl.freqString}}</div>
   </div>
-  </div>
+  </div> -->
 
   </ion-content>
 </ion-modal-view>

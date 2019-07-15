@@ -351,3 +351,98 @@ ion-modal-view > ion-header-bar > button,
   color: #54DCC1;
   font-weight: 700;
 }
+
+/* ========== ========== ========== ========== ========== */
+/* main-metrics.html */
+/* ========== ========== ========== ========== ========== */
+#card-currently-displaying {
+  background: #fff;
+  color: var(--fabmob-color-blue-a);
+  border-radius: 5px;
+  display: block;
+  margin: 10px;
+  margin-top: 15px;
+  position: relative;
+  height: 32px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03), 0 2px 3px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  transition: height 0.3s ease-out;
+  overflow: hidden;
+}
+
+h4.currently-displaying-header{
+  color: #fff;
+  background: var(--fabmob-color-blue-a);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -1px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+}
+
+/* ========== ========== ========== ========== ========== */
+/* main-control.html */
+/* ========== ========== ========== ========== ========== */
+.change-data-button {
+  float: right;
+  color: var(--fabmob-color-blue-a);
+  background-color: white;
+  height: 20px;
+  border-radius: 5px;
+  width: 110px;
+  margin-right: 5px;
+  margin-top: -28px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+
+.main-control-panel .assertive {
+  color: #ef437a !important;
+}
+
+.main-control-panel .balanced {
+  color: #33cd5f !important;
+}
+
+.main-control-panel .button-clear {
+  background: none !important;
+}
+
+.main-control-panel .button.ng-binding {
+  background: none !important;
+}
+
+.main-control-panel .energized {
+  color: #ffc900 !important;
+}
+
+.main-control-panel .icon {
+  font-size: 30px;
+}
+
+.main-control-border-right {
+  border-right: 1px solid #ddd;
+}
+
+.no-animate {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.item-location {
+  padding-top: 5px;
+}
+
+.item-location .item-note {
+  float: left;
+  font-size: 10px;
+}
+
+.dev-zone {
+  width:100%;
+}
+
+.dev-zone .button {
+  top: 4px;
+}

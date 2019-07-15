@@ -9,7 +9,8 @@ angular.module('emission.main', ['emission.main.recent',
                                  'emission.main.metrics',
                                  'emission.main.surveys',
                                  'emission.tripconfirm.posttrip.map',
-                                 'emission.services'])
+                                 'emission.services',
+                                 'emission.services.email'])
 
 .config(function($stateProvider, $ionicConfigProvider, $urlRouterProvider) {
   $stateProvider
