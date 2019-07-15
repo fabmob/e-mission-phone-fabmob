@@ -193,11 +193,9 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
       return $scope.userData.weightUnit == 0? "unit-toggle-right-active hvcenter" : "unit-toggle-right hvcenter";
     }
     $scope.currentQueryForCalorie = function() {
-      // return $scope.uictrl.current ==  "Last Week" ? "user-calorie-percentage" : "user-calorie-no-percentage";
       return $scope.uictrl.current ? "user-calorie-percentage" : "user-calorie-no-percentage";
     }
     $scope.currentQueryForCarbon = function() {
-      // return $scope.uictrl.current == "Last Week" ? "user-carbon-percentage" : "user-carbon-no-percentage";
       return $scope.uictrl.current ? "user-carbon-percentage" : "user-carbon-no-percentage";
     }
     $scope.showRange = function() {
