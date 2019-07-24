@@ -1086,7 +1086,9 @@ angular.module('emission.main.metrics',['nvd3', 'emission.services', 'ionic-date
     "IN_VEHICLE":"ion-speedometer",
     "CAR":"ion-android-car",
     "BUS":"ion-android-bus",
-    "TRAIN":"ion-android-train",
+    "TRAIN": "ion-android-train",
+    "TRAM": "fas fa-tram",
+    "SUBWAY":"fas fa-subway",
     "UNKNOWN": "ion-ios-help",
     "AIR_OR_HSR": "ion-plane"}
     return icons[key];
