@@ -93,6 +93,9 @@ angular.module('emission.main.metrics.factory', ['emission.plugin.kvstore'])
     for (var i in standardMETs[mode]) {
       if (mpstomph(speed).between(standardMETs[mode][i].range[0], standardMETs[mode][i].range[1])) {
         return standardMETs[mode][i].mets;
+      } else if (mpstomph(speed) < 0 ) {
+        console.log("CalorieCal.getMet() Negative speed: " + mpstomph(speed));
+        return 0;
       }
     }
   }
