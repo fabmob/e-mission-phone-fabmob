@@ -693,12 +693,18 @@ angular.module('emission.main.control',['emission.services',
                         display_name: ""
                     }
                 };
-                Promise.resolve(CommonGraph.getDisplayName('place', $scope.settings.obj));
+                if (isInFrance($scope.settings.obj.geometry.coordinates)) {
+                    console.log("User is in France, I will ask the address to official API");
+                    Promise.resolve(CommonGraph.getDisplayNameFrance($scope.settings.obj));
+                } else {
+                    console.log("User is not in France, I will use nominatim");
+                    Promise.resolve(CommonGraph.getDisplayName('place', $scope.settings.obj));
+                }
             }, function(error) {
                 Logger.displayError("Error while reading current position: ", error);    
             });      
         } else {
-            console.log("Location is disabled, cannot retrieve user's current possition.")
+            console.log("Location is disabled, cannot retrieve user's current possition.");
             $scope.settings.obj = {
                 properties: {
                     display_name: $translate.instant('general-settings.cannot-retrieve-position-location-disabled')
@@ -706,4 +712,18 @@ angular.module('emission.main.control',['emission.services',
             };
         }
     }
+
+    var isInFrance = function (point) {
+        if ($scope.france != null) {
+            return turf.booleanPointInPolygon(turf.point([point[0], point[1]]), $scope.france);
+        } else {
+            return false;
+        }
+    }
+
+    CommonGraph.getFranceGeoJSON().then(function (result) {
+        $scope.france = result;
+    }, function (err) {
+        $scope.france = err;
+    });
 });
