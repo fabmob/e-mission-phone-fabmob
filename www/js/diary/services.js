@@ -40,8 +40,6 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
     "IN_VEHICLE":"ion-speedometer",
     "BUS": "ion-android-bus",
     "TRAIN": "ion-android-train",
-    "TRAM": "fas fa-tram",
-    "SUBWAY": "fas fa-subway",
     "CAR": "ion-android-car",
     "UNKNOWN": "ion-ios-help",
     "UNPROCESSED": "ion-ios-help",
@@ -75,8 +73,6 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
     "IN_VEHICLE":"ion-speedometer",
     "BUS": "ion-android-bus",
     "TRAIN": "ion-android-train",
-    "TRAM": "fas fa-tram",
-    "SUBWAY": "fas fa-subway",
     "CAR": "ion-android-car",
     "UNKNOWN": "ion-ios-help",
     "UNPROCESSED": "ion-ios-help",
@@ -132,8 +128,6 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
     "IN_VEHICLE":"ion-speedometer",
     "CAR": "ion-android-car",
     "BUS": "ion-android-bus",
-    "TRAIN": "ion-android-train",
-    "TRAM": "fas fa-tram",
     "SUBWAY": "fas fa-subway",
     "UNKNOWN": "ion-ios-help",
     "UNPROCESSED": "ion-ios-help",
@@ -312,7 +306,7 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
   };
 
   dh.userModes = [
-        "walk", "bicycle", "car", "bus", "train", "tram", "subway", "unicorn"
+        "walk", "bicycle", "car", "bus", "train", "unicorn"
     ];
   dh.showModes = function(section) {
     return function() {
@@ -401,8 +395,6 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
             case "BICYCLING": return getColoredStyle(baseDict, 'green');
             case "IN_VEHICLE": return getColoredStyle(baseDict, 'purple');
             case "TRAIN": return getColoredStyle(baseDict, 'skyblue');
-            case "TRAM": return getColoredStyle(baseDict, 'aqua');
-            case "SUBWAY": return getColoredStyle(baseDict, 'cyan');
             case "BUS": return getColoredStyle(baseDict, 'navy');
             case "CAR": return getColoredStyle(baseDict, 'salmon');
             case "UNKNOWN": return getColoredStyle(baseDict, 'orange');
