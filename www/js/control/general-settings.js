@@ -21,6 +21,7 @@ angular.module('emission.main.control',['emission.services',
                StartPrefs, ControlHelper, EmailHelper,
                ControlCollectionHelper, ControlSyncHelper,
                ControlTransitionNotifyHelper,
+               CarbonDatasetHelper,
                UpdateCheck,
                CalorieCal, ClientStats, CommHelper, Logger,
                $translate, CommonGraph) {
@@ -56,6 +57,8 @@ angular.module('emission.main.control',['emission.services',
     $scope.openDatePicker = function(){
       ionicDatePicker.openDatePicker(datepickerObject);
     };
+
+    $scope.carbonDatasetString = $translate.instant('general-settings.carbon-dataset') + ": " + CarbonDatasetHelper.getCurrentCarbonDatasetCode();
 
     $scope.emailLog = function () {
         // Passing true, we want to send logs
@@ -100,7 +103,7 @@ angular.module('emission.main.control',['emission.services',
             // config not loaded when loading ui, set default as false
             // TODO: Read the value if it is not defined.
             // Otherwise, don't we have a race with reading?
-            // we don't really $apply on this field... 
+            // we don't really $apply on this field...
             return false;
         } else {
             return isMediumAccuracy;
@@ -256,7 +259,7 @@ angular.module('emission.main.control',['emission.services',
         $scope.settings.channel = function(newName) {
           return arguments.length ? (UpdateCheck.setChannel(newName)) : $scope.settings.storedChannel;
         };
-        UpdateCheck.getChannel().then(function(retVal) { 
+        UpdateCheck.getChannel().then(function(retVal) {
             $scope.$apply(function() {
                 $scope.settings.storedChannel = retVal;
             });
@@ -449,6 +452,19 @@ angular.module('emission.main.control',['emission.services',
             }
         }
     }
+    $scope.changeCarbonDataset = function() {
+        $ionicActionSheet.show({
+          buttons: CarbonDatasetHelper.getCarbonDatasetOptions(),
+          titleText: $translate.instant('general-settings.choose-dataset'),
+          cancelText: $translate.instant('general-settings.cancel'),
+          buttonClicked: function(index, button) {
+            console.log("changeCarbonDataset(): chose locale " + button.value);
+            CarbonDatasetHelper.saveCurrentCarbonDatasetLocale(button.value);
+            $scope.carbonDatasetString = $translate.instant('general-settings.carbon-dataset') + ": " + CarbonDatasetHelper.getCurrentCarbonDatasetCode();
+            return true;
+          }
+        });
+    };
     $scope.expandDeveloperZone = function() {
         if ($scope.collectionExpanded()) {
             $scope.expanded = false;
