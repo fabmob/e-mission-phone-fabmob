@@ -128,7 +128,7 @@ angular.module('emission.main.diary.services', ['emission.plugin.logger',
     "IN_VEHICLE":"ion-speedometer",
     "CAR": "ion-android-car",
     "BUS": "ion-android-bus",
-    "SUBWAY": "fas fa-subway",
+    "TRAIN": "ion-android-train",
     "UNKNOWN": "ion-ios-help",
     "UNPROCESSED": "ion-ios-help",
     "AIR_OR_HSR": "ion-plane"}

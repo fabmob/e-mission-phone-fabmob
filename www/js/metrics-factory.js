@@ -9,7 +9,7 @@ angular.module('emission.main.metrics.factory', ['emission.plugin.kvstore'])
     BICYCLING:    0,
     CAR:        267/1609,
     BUS:        278/1609,
-    TRAIN:      92/1609,
+    TRAIN:       92/1609,
     AIR_OR_HSR: 217/1609
   }
   var mtokm = function(v) {
