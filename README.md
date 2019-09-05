@@ -1,4 +1,4 @@
-e-mission phone app [FABMOB]
+e-mission phone app [Traceur FabMob app]
 --------------------
 
 This is the README for e-mission-phone FabMob
@@ -7,7 +7,8 @@ The description and docs of the "Traceur de Mobilités" project for FabMob are h
 
 The full original README for e-mission-phone is here : https://github.com/e-mission/e-mission-phone/blob/master/README.md
 
-See also the e-mission doc repo here : https://github.com/e-mission/e-mission-docs/
+See also the traceur phone do here : https://fabmob.readthedocs.io/en/latest/
+based on the e-mission doc repo here : https://github.com/e-mission/e-mission-docs/
 
 For end-users:
 ---
