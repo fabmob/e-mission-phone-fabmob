@@ -1,3 +1,6 @@
+> 🚧 This repo is replaced by [Tracemob-phone](https://github.com/fabmob/tracemob-phone)
+
+
 e-mission phone app [Traceur FabMob app]
 --------------------
 
